@@ -20,7 +20,7 @@ body {
   position: relative;
   box-sizing: border-box;
   padding: 5px; /* 내부 패딩 공간 (hover 애니메이션 영역 포함) */
-  transition: all 0.3s ease; /* 매끄러운 애니메이션 효과 */
+  transition: all 0.1s ease; /* 매끄러운 애니메이션 효과 */
 }
 
 /* 사각형 내부 콘텐츠 */
@@ -29,7 +29,7 @@ body {
   height: 100%;
   background-color: #F25100; /* 배경색은 내부 콘텐츠에만 적용 */
   position: relative; /* ::after를 위한 포지션 설정 */
-  transition: all 0.3s ease; /* 콘텐츠 애니메이션 속성 */
+  transition: all 0.1s ease; /* 콘텐츠 애니메이션 속성 */
 }
 
 /* Hover 상태: 전체 애니메이션 */
@@ -46,7 +46,7 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: calc(100% - 20px); /* 내부 작은 사각형 계산 */
-  height: calc(100% - 20px);
+  width: calc(100% - 10px); /* 내부 작은 사각형 계산 */
+  height: calc(100% - 10px);
   background-color: #F25100; /* 작은 사각형 색상 적용 */
 }
