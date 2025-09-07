@@ -103,4 +103,43 @@ document.addEventListener("DOMContentLoaded", function () {
   // 최초 실행 및 주기적 실행 타이머 시작
   if (autoHighlightActive) {
     runAutoHighlight(); // 로드 직후 한번 실행
-    autoHighlightTimer = setInterval(runAutoHighlight, AUTO_HIGHLIGHT_INTERVAL
+    autoHighlightTimer = setInterval(runAutoHighlight, AUTO_HIGHLIGHT_INTERVAL);
+  }
+
+  // 사용자 인터랙션 감지: 자동 하이라이트 중단 + 재시작 타이머 초기화
+  function userInteractionHandler() {
+    stopAutoHighlight();
+    resetInactivityTimer();
+  }
+
+  // 이벤트 리스너: 마우스 움직임과 터치 시작 감지 (반복 가능)
+  window.addEventListener("mousemove", userInteractionHandler);
+  window.addEventListener("touchstart", userInteractionHandler);
+
+  // 사용자가 마우스 이동했을 때 사각형 hover 활성화 여부 제어 (기존 로직 유지)
+  window.addEventListener("mousemove", (event) => {
+    const mouseX = event.clientX;
+    const mouseY = event.clientY;
+
+    // 디버그 원 위치 업데이트(옵션)
+    debugCircle.style.left = `${mouseX - radius}px`;
+    debugCircle.style.top = `${mouseY - radius}px`;
+
+    squares.forEach((square) => {
+      const rect = square.getBoundingClientRect();
+      const squareCenterX = rect.left + rect.width / 2;
+      const squareCenterY = rect.top + rect.height / 2;
+
+      const distance = Math.hypot(mouseX - squareCenterX, mouseY - squareCenterY);
+
+      if (distance < radius) {
+        square.classList.add("hover");
+      } else {
+        // 자동 하이라이트가 멈춘 경우에만 hover 제거 (자동 중일 땐 중복 제거 방지)
+        if (!autoHighlightActive) {
+          square.classList.remove("hover");
+        }
+      }
+    });
+  });
+});
