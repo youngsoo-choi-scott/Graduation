@@ -1,1 +1,31 @@
+/* 페이지 배경색 설정 */
+body {
+  margin: 0;
+  background-color: #8CE2FF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* 화면 꽉 채우기 */
+  overflow: hidden;
+}
 
+/* 정사각형들을 관리할 컨테이너 설정 */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 30px); /* 30px 크기의 아이템 반복 */
+  grid-template-rows: repeat(auto-fill, 30px);
+  gap: 10px; /* 사각형 간격 */
+}
+
+/* 개별 정사각형 스타일 */
+.square {
+  width: 30px;
+  height: 30px;
+  background-color: #F25100;
+  transition: transform 0.25s ease; /* hover 시 부드러운 변화 */
+}
+
+/* Hover 시 회전하여 마름모 모양으로 변경 */
+.square:hover {
+  transform: rotate(45deg); /* 45도 회전 */
+}
