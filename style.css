@@ -17,9 +17,9 @@ body {
 .left {
   display: flex;
   flex-direction: column;
-  justify-content: center; /* 중앙 정렬 */
+  justify-content: left; /* 중앙 정렬 */
   align-items: center;
-  background-color: #FFF8E1; /* 밝은 배경색 */
+  background-color: #8CE2FF; /* 배경색 */
   padding: 20px;
   font-family: Arial, sans-serif;
   text-align: center;
@@ -27,13 +27,13 @@ body {
 
 .left h1 {
   font-size: 2.5rem;
-  color: #F4511E; /* 밝은 오렌지색 */
+  color: #F25100; /* 텍스트 색상 */
   margin-bottom: 10px;
 }
 
 .left p {
   font-size: 1.2rem;
-  color: #333; /* 텍스트 색상 */
+  color: #F25100; /* 텍스트 색상 */
   line-height: 1.5;
 }
 
