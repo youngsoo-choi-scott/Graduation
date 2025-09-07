@@ -39,12 +39,10 @@ document.addEventListener("DOMContentLoaded", function () {
   const AUTO_HIGHLIGHT_COUNT = 6;      // 동시에 하이라이트할 사각형 수
   const AUTO_HIGHLIGHT_INTERVAL = 900; // 주기 (ms)
   const HOVER_DURATION = 500;           // 하이라이트 지속 시간 (ms)
-  const AUTO_RESTART_DELAY = 3000;      // 자동 하이라이트 재시작 대기 시간 (ms)
 
   // 사용자 애니메이션 제어 변수
   let autoHighlightActive = true;
   let autoHighlightTimer = null;
-  let inactivityTimer = null;
 
   // motion-reduce 설정을 존중 (무조건 애니메이션 안 함)
   if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
@@ -74,15 +72,13 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // 자동 하이라이트 시작 함수
-  function startAutoHighlight() {
-    if (autoHighlightActive) return;
-    autoHighlightActive = true;
-    runAutoHighlight();
+  // 최초 실행 및 주기적 실행 타이머 시작
+  if (autoHighlightActive) {
+    runAutoHighlight(); // 로드 직후 한번 실행
     autoHighlightTimer = setInterval(runAutoHighlight, AUTO_HIGHLIGHT_INTERVAL);
   }
 
-  // 자동 하이라이트 중단 함수
+  // 마우스/터치 초기 상호작용 시 자동 하이라이트 종료 함수
   function stopAutoHighlight() {
     if (!autoHighlightActive) return;
     autoHighlightActive = false;
@@ -92,29 +88,8 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  // inactivityTimer 초기화 및 자동 하이라이트 재시작 예약 함수
-  function resetInactivityTimer() {
-    if (inactivityTimer) clearTimeout(inactivityTimer);
-    inactivityTimer = setTimeout(() => {
-      startAutoHighlight();
-    }, AUTO_RESTART_DELAY);
-  }
-
-  // 최초 실행 및 주기적 실행 타이머 시작
-  if (autoHighlightActive) {
-    runAutoHighlight(); // 로드 직후 한번 실행
-    autoHighlightTimer = setInterval(runAutoHighlight, AUTO_HIGHLIGHT_INTERVAL);
-  }
-
-  // 사용자 인터랙션 감지: 자동 하이라이트 중단 + 재시작 타이머 초기화
-  function userInteractionHandler() {
-    stopAutoHighlight();
-    resetInactivityTimer();
-  }
-
-  // 이벤트 리스너: 마우스 움직임과 터치 시작 감지 (반복 가능)
-  window.addEventListener("mousemove", userInteractionHandler);
-  window.addEventListener("touchstart", userInteractionHandler);
+  window.addEventListener("mousemove", () => stopAutoHighlight(), { once: true });
+  window.addEventListener("touchstart", () => stopAutoHighlight(), { once: true });
 
   // 사용자가 마우스 이동했을 때 사각형 hover 활성화 여부 제어 (기존 로직 유지)
   window.addEventListener("mousemove", (event) => {
