@@ -3,14 +3,21 @@ document.addEventListener("DOMContentLoaded", function () {
   const squareSize = 40; // 기본 사각형 크기
   const radius = 100; // 마우스 반경 (hover 효과 범위)
 
-  // 그리드 사각형을 생성
+  // 계산하여 화면에 맞는 사각형 갯수 구하기
   const cols = Math.floor(window.innerWidth / squareSize);
   const rows = Math.floor(window.innerHeight / squareSize);
   const totalSquares = cols * rows;
 
+  // 그리드 사각형을 생성
   for (let i = 0; i < totalSquares; i++) {
     const square = document.createElement("div");
     square.classList.add("square");
+
+    // 내부에 content 요소 추가
+    const content = document.createElement("div");
+    content.classList.add("content");
+    square.appendChild(content);
+
     grid.appendChild(square);
   }
 
@@ -31,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
         Math.pow(mouseX - squareCenterX, 2) + Math.pow(mouseY - squareCenterY, 2)
       );
 
-      // 반경 내에 들어오면 클래스 추가
+      // 반경 내에 들어오면 hover 클래스 추가
       if (distance < radius) {
         square.classList.add("hover");
       } else {
