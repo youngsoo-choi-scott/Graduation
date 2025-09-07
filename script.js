@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const squares = Array.from(grid.querySelectorAll(".square"));
 
   // 자동 하이라이트 옵션
-  const AUTO_HIGHLIGHT_COUNT = 1;      // 동시에 하이라이트할 사각형 수
+  const AUTO_HIGHLIGHT_COUNT = 4;      // 동시에 하이라이트할 사각형 수
   const AUTO_HIGHLIGHT_INTERVAL = 900; // 주기 (ms)
   const HOVER_DURATION = 500;           // 하이라이트 지속 시간 (ms)
 
