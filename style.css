@@ -11,18 +11,17 @@ body {
   display: grid;
   width: 100%;
   height: 100%;
-  grid-template-columns: repeat(auto-fill, 30px); /* 사각형 기본 크기 */
-  grid-template-rows: repeat(auto-fill, 30px);   /* 사각형 기본 크기 */
-  gap: 10px; /* 사각형 간격 */
+  grid-template-columns: repeat(auto-fill, minmax(40px, 1fr)); /* 최소 크기 40px, 반응형 지원 */
+  grid-template-rows: repeat(auto-fill, 40px);                /* 최소 높이 40px */
 }
 
 /* 각 정사각형 기본 스타일 */
 .square {
-  width: 30px;
-  height: 30px;
-  background-color: #F25100;
-  position: relative; /* 내부 사각형 배치를 위한 설정 */
-  transition: transform 0.3s ease, background-color 0.3s ease; /* 부드러운 애니메이션 효과 */
+  position: relative;
+  box-sizing: border-box;
+  background-color: #F25100; /* 기본 사각형 색상 */
+  padding: 5px; /* 내부 패딩 공간 (hover 애니메이션 영역 포함) */
+  transition: all 0.3s ease; /* 매끄러운 애니메이션 효과 */
 }
 
 /* Hover 시 큰 사각형 변화 */
@@ -39,7 +38,7 @@ body {
   top: 50%; /* 부모의 정중앙에 위치 */
   left: 50%;
   transform: translate(-50%, -50%); /* 정중앙 기준으로 위치 조정 */
-  width: 20px; /* 작은 사각형 크기 */
-  height: 20px;
+  width: calc(100% - 20px); /* padding 크기를 고려하여 작은 사각형 크기 계산 */
+  height: calc(100% - 20px); /* padding 크기 고려 */
   background-color: #F25100; /* 작은 사각형 색상 */
 }
