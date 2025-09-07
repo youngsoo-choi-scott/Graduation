@@ -1,11 +1,11 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const grid = document.querySelector(".grid");
+  const grid = document.querySelector(".right .grid"); // 오른쪽 영역에서 그리드 사용
   const squareSize = 40; // 사각형 크기
   const radius = 80; // 마우스 반경
 
   // 화면 비율에 맞춰 그리드 사각형 생성
-  const cols = Math.floor(window.innerWidth / squareSize);
-  const rows = Math.floor(window.innerHeight / squareSize);
+  const cols = Math.floor(grid.offsetWidth / squareSize);
+  const rows = Math.floor(grid.offsetHeight / squareSize);
   const totalSquares = cols * rows;
 
   for (let i = 0; i < totalSquares; i++) {
@@ -28,12 +28,11 @@ document.addEventListener("DOMContentLoaded", function () {
   debugCircle.style.zIndex = "1000";
   debugCircle.style.width = `${radius * 2}px`;
   debugCircle.style.height = `${radius * 2}px`;
-  debugCircle.style.opacity = "0";
+  debugCircle.style.opacity = "0"; // 화면에 표시되지 않음
   document.body.appendChild(debugCircle);
 
   // 마우스 움직임 감지
   window.addEventListener("mousemove", (event) => {
-    const squares = document.querySelectorAll(".square");
     const mouseX = event.clientX;
     const mouseY = event.clientY;
 
@@ -41,6 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
     debugCircle.style.left = `${mouseX - radius}px`;
     debugCircle.style.top = `${mouseY - radius}px`;
 
+    const squares = document.querySelectorAll(".square");
     squares.forEach((square) => {
       const rect = square.getBoundingClientRect();
       const squareCenterX = rect.left + rect.width / 2;
