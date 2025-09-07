@@ -9,13 +9,13 @@ body {
   display: grid;
   width: 100%;
   height: 100%;
-  grid-template-columns: repeat(auto-fill, 30px);
-  grid-template-rows: repeat(auto-fill, 30px);
+  grid-template-columns: repeat(auto-fill, 30px); /* 사각형 기본 크기 */
+  grid-template-rows: repeat(auto-fill, 30px);   /* 사각형 기본 크기 */
   gap: 10px; /* 사각형 간격 */
 }
 
 .square {
-  width: 30px;
+  width: 30px; /* 정사각형 크기 */
   height: 30px;
   background-color: #F25100;
   transition: transform 0.25s ease;
