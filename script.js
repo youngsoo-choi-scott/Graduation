@@ -28,6 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
   debugCircle.style.zIndex = "1000";
   debugCircle.style.width = `${radius * 2}px`;
   debugCircle.style.height = `${radius * 2}px`;
+  debugCircle.style.opacity = "0";
   document.body.appendChild(debugCircle);
 
   // 마우스 움직임 감지
