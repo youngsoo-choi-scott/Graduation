@@ -46,7 +46,7 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: calc(100% - 10px); /* 내부 작은 사각형 계산 */
-  height: calc(100% - 10px);
+  width: calc(100% - 12px); /* 내부 작은 사각형 계산 */
+  height: calc(100% - 12px);
   background-color: #F25100; /* 작은 사각형 색상 적용 */
 }
