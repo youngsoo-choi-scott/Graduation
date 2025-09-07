@@ -3,49 +3,53 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>졸업 전시회 | 디자인컨버전스학과</title>
+  <title>kjdc-p0int main</title>
   <style>
-    /* 간단한 스타일 */
+    /* 페이지 배경색 설정 */
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
-      padding: 0;
-      background-color: #f7f7f7;
-      color: #333;
-      text-align: center;
+      background-color: #8CE2FF;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh; /* 화면 꽉 채우기 */
+      overflow: hidden;
     }
-    header {
-      background-color: #1a1a1a;
-      color: white;
-      padding: 20px;
+
+    /* 정사각형들을 관리할 컨테이너 설정 */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, 30px); /* 30px 크기의 아이템 반복 */
+      grid-template-rows: repeat(auto-fill, 30px);
+      gap: 10px; /* 사각형 간격 */
     }
-    h1 {
-      margin: 0;
+
+    /* 개별 정사각형 스타일 */
+    .square {
+      width: 30px;
+      height: 30px;
+      background-color: #F25100;
+      transition: transform 0.25s ease; /* hover 시 부드러운 변화 */
     }
-    section {
-      padding: 50px 20px;
-    }
-    footer {
-      background-color: #1a1a1a;
-      color: white;
-      padding: 10px;
-      position: absolute;
-      width: 100%;
-      bottom: 0;
+
+    /* Hover 시 회전하여 마름모 모양으로 변경 */
+    .square:hover {
+      transform: rotate(45deg); /* 45도 회전 */
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>디자인컨버전스학과 졸업 전시회</h1>
-    <p>"창조와 융합의 미래를 열다"</p>
-  </header>
-  <section>
-    <h2>환영합니다!</h2>
-    <p>디자인컨버전스학과의 시각디자인과 제품디자인 졸업 작품을 선보이는 전시회 웹페이지에 오신 것을 환영합니다.</p>
-  </section>
-  <footer>
-    <p>&copy; 2023 디자인컨버전스학과 | 모든 권리 보유</p>
-  </footer>
+  <!-- 사각형들을 배치할 그리드 컨테이너 -->
+  <div class="grid">
+    <!-- 다수의 사각형 생성 -->
+    <!-- 아래 코드를 복사해 추가하면 사각형 갯수를 조정 가능 -->
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <!-- 더 많은 사각형 복사 가능 또는 JS로 생성 가능 -->
+  </div>
 </body>
 </html>
