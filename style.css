@@ -19,26 +19,34 @@ body {
 .square {
   position: relative;
   box-sizing: border-box;
-  background-color: #F25100; /* 기본 사각형 색상 */
   padding: 5px; /* 내부 패딩 공간 (hover 애니메이션 영역 포함) */
   transition: all 0.3s ease; /* 매끄러운 애니메이션 효과 */
 }
 
-/* Hover 시 큰 사각형 변화 */
-.square:hover {
-  transform: rotate(45deg); /* 45도 회전 */
-  background-color: #8CE2FF; /* 배경 색상 변경 */
-  border: 1px solid #F25100; /* 테두리 추가 */
+/* 사각형 내부 콘텐츠 */
+.content {
+  width: 100%;
+  height: 100%;
+  background-color: #F25100; /* 배경색은 내부 콘텐츠에만 적용 */
+  position: relative; /* ::after를 위한 포지션 설정 */
+  transition: all 0.3s ease; /* 콘텐츠 애니메이션 속성 */
 }
 
-/* 안에 작은 사각형 */
-.square:hover::after {
-  content: ''; /* 작은 사각형을 가상 요소로 추가 */
+/* Hover 상태: 전체 애니메이션 */
+.square:hover .content {
+  background-color: #8CE2FF; /* 내부 콘텐츠 배경색 변경 */
+  transform: rotate(45deg); /* 회전 적용 */
+  border: 1px solid #F25100; /* 콘텐츠 테두리 추가 */
+}
+
+/* Hover 상태에서 작은 사각형 */
+.square:hover .content::after {
+  content: '';
   position: absolute;
-  top: 50%; /* 부모의 정중앙에 위치 */
+  top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%); /* 정중앙 기준으로 위치 조정 */
-  width: calc(100% - 20px); /* padding 크기를 고려하여 작은 사각형 크기 계산 */
-  height: calc(100% - 20px); /* padding 크기 고려 */
-  background-color: #F25100; /* 작은 사각형 색상 */
+  transform: translate(-50%, -50%);
+  width: calc(100% - 20px); /* 내부 작은 사각형 계산 */
+  height: calc(100% - 20px);
+  background-color: #F25100; /* 작은 사각형 색상 적용 */
 }
