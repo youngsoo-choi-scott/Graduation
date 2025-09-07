@@ -22,7 +22,7 @@ body {
   height: 30px;
   background-color: #F25100;
   position: relative; /* 내부 사각형 배치를 위한 설정 */
-  transition: all 0.3s ease; /* 부드러운 애니메이션 효과 */
+  transition: transform 0.3s ease, background-color 0.3s ease; /* 부드러운 애니메이션 효과 */
 }
 
 /* Hover 시 큰 사각형 변화 */
