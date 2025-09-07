@@ -19,7 +19,6 @@ document.addEventListener("DOMContentLoaded", function () {
     grid.appendChild(square);
   }
 
-  /*
   // 디버깅용 반경 시각화 (옵션)
   const debugCircle = document.createElement("div");
   debugCircle.style.position = "absolute";
@@ -30,7 +29,6 @@ document.addEventListener("DOMContentLoaded", function () {
   debugCircle.style.width = `${radius * 2}px`;
   debugCircle.style.height = `${radius * 2}px`;
   document.body.appendChild(debugCircle);
-  */
 
   // 마우스 움직임 감지
   window.addEventListener("mousemove", (event) => {
