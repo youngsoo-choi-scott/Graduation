@@ -6,6 +6,44 @@ body {
   overflow: hidden;
 }
 
+/* 메인 컨테이너: 화면을 좌우로 분할 */
+.main-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 좌우 50% 비율 분할 */
+  height: 100vh; /* 전체 화면 높이 */
+}
+
+/* 왼쪽 영역 */
+.left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* 중앙 정렬 */
+  align-items: center;
+  background-color: #FFF8E1; /* 밝은 배경색 */
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+.left h1 {
+  font-size: 2.5rem;
+  color: #F4511E; /* 밝은 오렌지색 */
+  margin-bottom: 10px;
+}
+
+.left p {
+  font-size: 1.2rem;
+  color: #333; /* 텍스트 색상 */
+  line-height: 1.5;
+}
+
+/* 오른쪽 영역 */
+.right {
+  background-color: #8CE2FF;
+  overflow: hidden; /* 넘치는 콘텐츠를 숨김 */
+  position: relative;
+}
+
 /* 그리드 컨테이너 */
 .grid {
   display: grid;
