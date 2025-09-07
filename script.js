@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
   const grid = document.querySelector(".grid");
   const squareSize = 40; // 사각형 크기
-  const radius = 120; // 마우스 반경
+  const radius = 80; // 마우스 반경
 
   // 화면 비율에 맞춰 그리드 사각형 생성
   const cols = Math.floor(window.innerWidth / squareSize);
@@ -19,6 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
     grid.appendChild(square);
   }
 
+  /*
   // 디버깅용 반경 시각화 (옵션)
   const debugCircle = document.createElement("div");
   debugCircle.style.position = "absolute";
@@ -29,6 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
   debugCircle.style.width = `${radius * 2}px`;
   debugCircle.style.height = `${radius * 2}px`;
   document.body.appendChild(debugCircle);
+  */
 
   // 마우스 움직임 감지
   window.addEventListener("mousemove", (event) => {
