@@ -39,10 +39,12 @@ document.addEventListener("DOMContentLoaded", function () {
   const AUTO_HIGHLIGHT_COUNT = 6;      // 동시에 하이라이트할 사각형 수
   const AUTO_HIGHLIGHT_INTERVAL = 900; // 주기 (ms)
   const HOVER_DURATION = 500;           // 하이라이트 지속 시간 (ms)
+  const AUTO_RESTART_DELAY = 3000;      // 자동 하이라이트 재시작 대기 시간 (ms)
 
   // 사용자 애니메이션 제어 변수
   let autoHighlightActive = true;
   let autoHighlightTimer = null;
+  let inactivityTimer = null;
 
   // motion-reduce 설정을 존중 (무조건 애니메이션 안 함)
   if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
@@ -72,13 +74,15 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // 최초 실행 및 주기적 실행 타이머 시작
-  if (autoHighlightActive) {
-    runAutoHighlight(); // 로드 직후 한번 실행
+  // 자동 하이라이트 시작 함수
+  function startAutoHighlight() {
+    if (autoHighlightActive) return;
+    autoHighlightActive = true;
+    runAutoHighlight();
     autoHighlightTimer = setInterval(runAutoHighlight, AUTO_HIGHLIGHT_INTERVAL);
   }
 
-  // 마우스/터치 초기 상호작용 시 자동 하이라이트 종료 함수
+  // 자동 하이라이트 중단 함수
   function stopAutoHighlight() {
     if (!autoHighlightActive) return;
     autoHighlightActive = false;
@@ -88,33 +92,15 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  window.addEventListener("mousemove", () => stopAutoHighlight(), { once: true });
-  window.addEventListener("touchstart", () => stopAutoHighlight(), { once: true });
+  // inactivityTimer 초기화 및 자동 하이라이트 재시작 예약 함수
+  function resetInactivityTimer() {
+    if (inactivityTimer) clearTimeout(inactivityTimer);
+    inactivityTimer = setTimeout(() => {
+      startAutoHighlight();
+    }, AUTO_RESTART_DELAY);
+  }
 
-  // 사용자가 마우스 이동했을 때 사각형 hover 활성화 여부 제어 (기존 로직 유지)
-  window.addEventListener("mousemove", (event) => {
-    const mouseX = event.clientX;
-    const mouseY = event.clientY;
-
-    // 디버그 원 위치 업데이트(옵션)
-    debugCircle.style.left = `${mouseX - radius}px`;
-    debugCircle.style.top = `${mouseY - radius}px`;
-
-    squares.forEach((square) => {
-      const rect = square.getBoundingClientRect();
-      const squareCenterX = rect.left + rect.width / 2;
-      const squareCenterY = rect.top + rect.height / 2;
-
-      const distance = Math.hypot(mouseX - squareCenterX, mouseY - squareCenterY);
-
-      if (distance < radius) {
-        square.classList.add("hover");
-      } else {
-        // 자동 하이라이트가 멈춘 경우에만 hover 제거 (자동 중일 땐 중복 제거 방지)
-        if (!autoHighlightActive) {
-          square.classList.remove("hover");
-        }
-      }
-    });
-  });
-});
+  // 최초 실행 및 주기적 실행 타이머 시작
+  if (autoHighlightActive) {
+    runAutoHighlight(); // 로드 직후 한번 실행
+    autoHighlightTimer = setInterval(runAutoHighlight, AUTO_HIGHLIGHT_INTERVAL
