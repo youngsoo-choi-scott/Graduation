@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
   const grid = document.querySelector(".right .grid"); // 오른쪽 영역에서 그리드 사용
   const squareSize = 30; // 사각형 크기
-  const radius = 80; // 마우스 반경
+  const radius = 60; // 마우스 반경
 
   // 화면 비율에 맞춰 그리드 사각형 생성
   const cols = Math.floor(grid.offsetWidth / squareSize);
