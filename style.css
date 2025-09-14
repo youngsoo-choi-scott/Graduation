@@ -51,33 +51,48 @@ body {
 .square {
   background-color: #70b5cc;
   aspect-ratio: 1 / 1;
-  transition: transform 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    background-color 0.3s ease,
+    border-color 0.3s ease;
   cursor: pointer;
   position: relative;
-  border: none;
-  transform: rotate(0deg);
+  border: 1px solid transparent;  /* 기본 상태에서 투명한 테두리 설정 */
+  transform: rotate(0deg) scale(1);
   box-sizing: border-box;
 }
 
-/* 마우스 오버 시 내부, 외부 모두 마름모 형태로 회전 */
-.square.hover {
-  background-color: #8ce2ff;
-  border: 2px solid #f25100;
-  transform: rotate(45deg);
+@keyframes waveColorChange {
+  0%, 100% {
+    background-color: #70b5cc;
+  }
+  50% {
+    background-color: #f25100;
+  }
 }
 
-/* 내부 작은 마름모 박스 - 가상 요소 사용 */
+.square.hover {
+  background-color: #8ce2ff;
+  border-color: #f25100;  /* 투명→주황색 단일 컬러 전환 */
+  transform: rotate(45deg) scale(0.9);
+  transition:
+    transform 0.3s ease,
+    background-color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+/* 내부 작은 마름모 박스 크기를 85%로 변경 */
 .square.hover::before {
   content: "";
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 50%;  /* 외부 마름모 크기의 50% */
-  height: 50%;
+  width: 85%;  /* 가로 85% */
+  height: 85%; /* 세로 85% */
   background-color: #f25100;
-  transform: translate(-50%, -50%) rotate(-45deg); /* 가운데 정렬 및 역 회전하여 외부와 올바른 방향 맞춤 */
-  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%); /* 마름모 형태 */
+  transform: translate(-50%, -50%) rotate(-45deg);
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
   box-sizing: border-box;
-  border-radius: 2px; /* 약간 둥근 모서리(선택사항) */
-  pointer-events: none; /* 내부 박스가 이벤트에 방해되지 않도록 */
+  border-radius: 2px;
+  pointer-events: none;
 }
