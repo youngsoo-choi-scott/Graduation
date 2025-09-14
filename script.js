@@ -16,12 +16,20 @@ document.addEventListener("DOMContentLoaded", function () {
     const rows = Math.floor((gridHeight + gap) / (minSquareSize + gap));
     const totalSquares = cols * rows;
 
-    for (let i = 0; i < totalSquares; i++) {
-      const square = document.createElement("div");
-      square.classList.add("square");
-      grid.appendChild(square);
-    }
+     for (let i = 0; i < totalSquares; i++) {
+    const square = document.createElement("div");
+    square.classList.add("square");
+
+    const row = Math.floor(i / cols);
+    const delay = row * 0.1;
+
+    // 여기에 animation 스타일 추가
+    square.style.animation = `waveColorChange 2s ease-in-out infinite`;
+    square.style.animationDelay = `${delay}s`;
+
+    grid.appendChild(square);
   }
+}
 
   createSquares();
 
