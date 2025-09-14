@@ -14,18 +14,20 @@ function createSquares() {
   const rows = Math.floor((gridHeight + gap) / (minSquareSize + gap));
   const totalSquares = cols * rows;
 
-  const animationDuration = 7; // 애니메이션 총 시간 7초
+  const timePerSquare = 0.15; // 한 칸당 애니메이션 소요 시간(초)
+  const animationDuration = timePerSquare * totalSquares; // 전체 애니메이션 시간
 
   for (let i = 0; i < totalSquares; i++) {
     const square = document.createElement("div");
     square.classList.add("square");
 
     const row = Math.floor(i / cols);
+    const col = i % cols;
 
-    // 각 행 별로 애니메이션을 완전히 끝낸 후 다음 행이 시작되도록 딜레이 계산
-    const delay = animationDuration * row;
+    // 한 칸씩 순차적으로 진행되도록 딜레이 계산
+    const delay = (row * cols + col) * timePerSquare;
 
-    square.style.animation = `waveColorChange ${animationDuration}s steps(1, end) infinite`;
+    square.style.animation = `waveColorChange ${animationDuration}s steps(${totalSquares}, end) infinite`;
     square.style.animationDelay = `${delay}s`;
 
     grid.appendChild(square);
