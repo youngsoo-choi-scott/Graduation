@@ -15,6 +15,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const totalSquares = cols * rows;
 
   const delayUnit = 0.1;
+  const animationDuration = 7; // 7초
+  const rowOverlap = 0.5;       // 절반 시점에 다음 줄 시작
 
   for (let i = 0; i < totalSquares; i++) {
     const square = document.createElement("div");
@@ -23,9 +25,10 @@ document.addEventListener("DOMContentLoaded", function () {
     const row = Math.floor(i / cols);
     const col = i % cols;
 
-    const delay = (row + col) * delayUnit;
+    // 딜레이 계산: 열 기준 + 행별 시작 지연 효과
+    const delay = col * delayUnit + animationDuration * rowOverlap * row;
 
-    square.style.animation = `waveColorChange 7s steps(1, end) infinite`;
+    square.style.animation = `waveColorChange ${animationDuration}s steps(1, end) infinite`;
     square.style.animationDelay = `${delay}s`;
 
     grid.appendChild(square);
