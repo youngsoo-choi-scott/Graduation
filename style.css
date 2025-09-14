@@ -60,13 +60,14 @@ body {
   border: 1px solid transparent;  /* 기본 상태에서 투명한 테두리 설정 */
   transform: rotate(0deg) scale(1);
   box-sizing: border-box;
+  animation-timing-function: steps(1, end);
 }
 
 @keyframes waveColorChange {
-  0%, 20%, 100% {
+  0%, 50%, 100% {
     background-color: #70b5cc;
   }
-  10% {
+  51%, 99% {
     background-color: #f25100;
   }
 }
