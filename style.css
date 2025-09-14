@@ -64,11 +64,14 @@ body {
 }
 
 @keyframes waveColorChange {
-  0%, 2%, 100% {
-    background-color: #70b5cc;
+  0% {
+    background-color: #70B5CC; /* 원래 색상 */
   }
-  1% {
-    background-color: #f25100;
+  50% {
+    background-color: #F25100; /* 바뀔 색상 */
+  }
+  100% {
+    background-color: #70B5CC;
   }
 }
 
