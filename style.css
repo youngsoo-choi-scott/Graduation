@@ -62,6 +62,15 @@ body {
   box-sizing: border-box;
 }
 
+@keyframes waveColorChange {
+  0%, 100% {
+    background-color: #70b5cc;
+  }
+  50% {
+    background-color: #f25100;
+  }
+}
+
 .square.hover {
   background-color: #8ce2ff;
   border-color: #f25100;  /* 투명→주황색 단일 컬러 전환 */
