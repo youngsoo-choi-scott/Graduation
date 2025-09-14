@@ -64,7 +64,7 @@ body {
 }
 
 @keyframes waveColorChange {
-  0%, 2%, 100% {
+  0%, 20%, 100% {
     background-color: #70b5cc;
   }
   1% {
