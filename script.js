@@ -27,7 +27,7 @@ function createSquares() {
     // 한 칸씩 순차적으로 진행되도록 딜레이 계산
     const delay = (row * cols + col) * timePerSquare;
 
-    square.style.animation = `waveColorChange ${animationDuration}s steps(${totalSquares}, end) infinite`;
+    square.style.animation = `waveColorChange ${animationDuration}s steps(1, end) infinite`;
     square.style.animationDelay = `${delay}s`;
 
     grid.appendChild(square);
