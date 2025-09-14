@@ -76,7 +76,7 @@ body {
 }
 
 .square.hover {
-  background-color: #8ce2ff;
+  background-color: #8ce2ff !important;
   border-color: #f25100;  /* 투명→주황색 단일 컬러 전환 */
   transform: rotate(45deg) scale(0.9);
   transition:
