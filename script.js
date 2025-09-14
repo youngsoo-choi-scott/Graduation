@@ -5,31 +5,31 @@ const minSquareSize = 30; // 최소 사각형 크기(px)
 const radius = 60;
 
 function createSquares() {
-grid.innerHTML = "";
+  grid.innerHTML = "";
 
-const gridWidth = grid.clientWidth;
-const gridHeight = grid.clientHeight;
+  const gridWidth = grid.clientWidth;
+  const gridHeight = grid.clientHeight;
 
-const cols = Math.floor((gridWidth + gap) / (minSquareSize + gap));
-const rows = Math.floor((gridHeight + gap) / (minSquareSize + gap));
-const totalSquares = cols * rows;
+  const cols = Math.floor((gridWidth + gap) / (minSquareSize + gap));
+  const rows = Math.floor((gridHeight + gap) / (minSquareSize + gap));
+  const totalSquares = cols * rows;
 
-const delayUnit = 0.1;
+  const animationDuration = 7; // 애니메이션 총 시간 7초
 
-for (let i = 0; i < totalSquares; i++) {
-const square = document.createElement("div");
-square.classList.add("square");
+  for (let i = 0; i < totalSquares; i++) {
+    const square = document.createElement("div");
+    square.classList.add("square");
 
-const row = Math.floor(i / cols);
-const col = i % cols;
+    const row = Math.floor(i / cols);
 
-const delay = (row + col) * delayUnit;
+    // 각 행 별로 애니메이션을 완전히 끝낸 후 다음 행이 시작되도록 딜레이 계산
+    const delay = animationDuration * row;
 
-square.style.animation = `waveColorChange 7s steps(1, end) infinite`;
-square.style.animationDelay = `${delay}s`;
+    square.style.animation = `waveColorChange ${animationDuration}s steps(1, end) infinite`;
+    square.style.animationDelay = `${delay}s`;
 
-grid.appendChild(square);
-}
+    grid.appendChild(square);
+  }
 }
 
 createSquares();
