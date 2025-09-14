@@ -18,7 +18,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: left; /* 중앙 정렬 */
-  align-items: center;
+  align-items: left;
   background-color: #000000; /* 배경색 */
   padding: 20px;
   font-family: Arial, sans-serif;
