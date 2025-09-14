@@ -27,13 +27,13 @@ body {
 
 .left h1 {
   font-size: 2.5rem;
-  color: #F25100; /* 텍스트 색상 */
+  color: #8CE2FF; /* 텍스트 색상 */
   margin-bottom: 10px;
 }
 
 .left p {
   font-size: 1.2rem;
-  color: #F25100; /* 텍스트 색상 */
+  color: #8CE2FF; /* 텍스트 색상 */
   line-height: 1.5;
 }
 
