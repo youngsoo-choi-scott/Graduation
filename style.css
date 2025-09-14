@@ -58,6 +58,7 @@ body {
   animation-fill-mode: forwards;
   animation-timing-function: steps(1, end);
   cursor: pointer;
+}
 
 @@keyframes flipColorChange {
   0%, 49.9% {
