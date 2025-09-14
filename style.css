@@ -51,20 +51,25 @@ body {
 .square {
   background-color: #70b5cc;
   aspect-ratio: 1 / 1;
-  transition: transform 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    background-color 0.3s ease,
+    border-color 0.3s ease;
   cursor: pointer;
   position: relative;
-  border: none;
-  transform: rotate(0deg);
+  border: 1px solid transparent;  /* 기본 상태에서 투명한 테두리 설정 */
+  transform: rotate(0deg) scale(1);
   box-sizing: border-box;
 }
 
-/* 외부 마름모 기본 크기에서 90% 크기로 축소 */
 .square.hover {
   background-color: #8ce2ff;
-  border: 1px solid #f25100;  /* 테두리 두께 1px로 수정 */
-  transform: rotate(45deg) scale(0.9); /* 90% 크기로 축소 */
-  transition: transform 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+  border-color: #f25100;  /* 투명→주황색 단일 컬러 전환 */
+  transform: rotate(45deg) scale(0.9);
+  transition:
+    transform 0.3s ease,
+    background-color 0.3s ease,
+    border-color 0.3s ease;
 }
 
 /* 내부 작은 마름모 박스 크기를 85%로 변경 */
