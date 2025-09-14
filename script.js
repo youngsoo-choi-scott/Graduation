@@ -60,6 +60,34 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
+  window.addEventListener("touchmove", (event) => {
+    const touch = event.touches[0];
+    const touchX = touch.clientX;
+    const touchY = touch.clientY;
+
+    squares().forEach((square) => {
+      const rect = square.getBoundingClientRect();
+      const centerX = rect.left + rect.width / 2;
+      const centerY = rect.top + rect.height / 2;
+      const distance = Math.hypot(touchX - centerX, touchY - centerY);
+
+      if (distance < radius) {
+        square.classList.add("hover");
+        square.style.animationPlayState = 'running';
+      } else {
+        square.classList.remove("hover");
+        square.style.animationPlayState = 'running';
+      }
+    });
+  });
+
+  window.addEventListener("touchend", () => {
+    squares().forEach((square) => {
+      square.classList.remove("hover");
+      square.style.animationPlayState = 'running';
+    });
+  });
+
   window.addEventListener("resize", () => {
     createSquares();
   });
