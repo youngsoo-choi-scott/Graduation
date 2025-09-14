@@ -14,7 +14,7 @@ function createSquares() {
   const rows = Math.floor((gridHeight + gap) / (minSquareSize + gap));
   const totalSquares = cols * rows;
 
-  const timePerSquare = 0.15; // 한 칸당 애니메이션 소요 시간(초)
+  const timePerSquare = 0.1; // 한 칸당 애니메이션 소요 시간(초)
   const animationDuration = timePerSquare * totalSquares; // 전체 애니메이션 시간
 
   for (let i = 0; i < totalSquares; i++) {
