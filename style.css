@@ -58,7 +58,7 @@ body {
 
   /* 간단한 컬러 변경을 위한 step 애니메이션 */
   animation-name: colorFlip;
-  animation-duration: 10s;  /* 전체 애니메이션 시간 */
+  animation-duration: 1.5s;  /* 전체 애니메이션 시간 */
   animation-timing-function: steps(2, end); /* 2단계로 딱 끊기게 */
   animation-iteration-count: infinite;
   animation-fill-mode: forwards;
