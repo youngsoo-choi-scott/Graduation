@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const grid = document.querySelector(".right .grid");
   const gap = 5;
   const minSquareSize = 30;
-  const radius = 60;
+  const radius = 100;
 
   function createSquares() {
     grid.innerHTML = "";
@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
       square.classList.add("square");
 
       // 각 박스마다 애니메이션 딜레이를 주어 순차적 느낌 연출
-      const delay = (i * 0.2) % 12; // 12초 주기와 맞추기
+      const delay = (i * 0.1) % 10; // 10초 주기와 맞추기
       square.style.animationDelay = `${delay}s`;
 
       grid.appendChild(square);
