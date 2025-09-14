@@ -9,7 +9,7 @@ body {
 /* 메인 컨테이너: 화면을 좌우로 분할 */
 .main-container {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* 좌우 50% 비율 분할 */
+  grid-template-columns: 20% 80%; /* 좌우 50% 비율 분할 */
   height: 100vh; /* 전체 화면 높이 */
 }
 
@@ -19,7 +19,7 @@ body {
   flex-direction: column;
   justify-content: left; /* 중앙 정렬 */
   align-items: center;
-  background-color: #8CE2FF; /* 배경색 */
+  background-color: #000000; /* 배경색 */
   padding: 20px;
   font-family: Arial, sans-serif;
   text-align: center;
@@ -65,7 +65,7 @@ body {
 .content {
   width: 100%;
   height: 100%;
-  background-color: #F25100; /* 배경색은 내부 콘텐츠에만 적용 */
+  background-color: #70B5CC; /* 배경색은 내부 콘텐츠에만 적용 */
   position: relative; /* ::after를 위한 포지션 설정 */
   transition: all 0.1s ease; /* 콘텐츠 애니메이션 속성 */
 }
