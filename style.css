@@ -57,10 +57,11 @@ body {
   backface-visibility: hidden;
   animation-fill-mode: forwards;
   animation-timing-function: steps(1, end);
+  animation-iteration-count: infinite;
   cursor: pointer;
 }
 
-@@keyframes flipColorChange {
+@keyframes flipColorChange {
   0%, 49.9% {
     transform: rotateY(0deg);
     background-color: #70b5cc;
@@ -72,13 +73,14 @@ body {
 }
 
 .square.hover {
-  background-color: #8ce2ff !important;
-  border-color: #f25100 !important;
-  transform: rotate(45deg) scale(0.9) !important;
+  background-color: #8ce2ff;
+  border-color: #f25100;
+  transform: rotate(45deg) scale(0.9);
   transition:
     transform 0.3s ease,
     background-color 0.3s ease,
     border-color 0.3s ease;
+  /* animation-play-state: paused; // 테스트시 주석 처리 */
 }
 
 .square.hover::before {
