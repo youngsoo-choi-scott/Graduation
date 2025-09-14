@@ -51,11 +51,33 @@ body {
 .square {
   background-color: #70b5cc;
   aspect-ratio: 1 / 1;
-  transition: background-color 0.2s ease, transform 0.2s ease;
+  transition: transform 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
   cursor: pointer;
+  position: relative;
+  border: none;
+  transform: rotate(0deg);
+  box-sizing: border-box;
 }
 
+/* 마우스 오버 시 내부, 외부 모두 마름모 형태로 회전 */
 .square.hover {
-  background-color: #558da8;
-  transform: scale(1.1);
+  background-color: #8ce2ff;
+  border: 2px solid #f25100;
+  transform: rotate(45deg);
+}
+
+/* 내부 작은 마름모 박스 - 가상 요소 사용 */
+.square.hover::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 50%;  /* 외부 마름모 크기의 50% */
+  height: 50%;
+  background-color: #f25100;
+  transform: translate(-50%, -50%) rotate(-45deg); /* 가운데 정렬 및 역 회전하여 외부와 올바른 방향 맞춤 */
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%); /* 마름모 형태 */
+  box-sizing: border-box;
+  border-radius: 2px; /* 약간 둥근 모서리(선택사항) */
+  pointer-events: none; /* 내부 박스가 이벤트에 방해되지 않도록 */
 }
