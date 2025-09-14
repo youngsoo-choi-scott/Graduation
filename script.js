@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const rows = Math.floor((gridHeight + gap) / (minSquareSize + gap));
   const totalSquares = cols * rows;
 
-  const delayUnit = 0.1; // 딜레이 단위 (초)
+  const delayUnit = 0.1;
 
   for (let i = 0; i < totalSquares; i++) {
     const square = document.createElement("div");
@@ -23,10 +23,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const row = Math.floor(i / cols);
     const col = i % cols;
 
-    // 행+열 합으로 delay 계산 → 왼쪽 위부터 대각선으로 파도 타는 효과
     const delay = (row + col) * delayUnit;
 
-    square.style.animation = `waveColorChange 7s ease-in-out infinite`;
+    square.style.animation = `waveColorChange 7s steps(1, end) infinite`;
     square.style.animationDelay = `${delay}s`;
 
     grid.appendChild(square);
