@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
       square.classList.add("square");
 
       // 각 박스마다 애니메이션 딜레이를 주어 순차적 느낌 연출
-      const delay = (i * 0.1) % 1.5; // 1.5초 주기와 맞추기
+      const delay = (i * 0.2) % 12; // 12초 주기와 맞추기
       square.style.animationDelay = `${delay}s`;
 
       grid.appendChild(square);
