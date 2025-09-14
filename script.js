@@ -1,43 +1,32 @@
 document.addEventListener("DOMContentLoaded", function () {
   const grid = document.querySelector(".right .grid");
   const gap = 5;
-  const minSquareSize = 30;
-  const timePerSquare = 0.15; // 한 칸 애니메이션 시간(초)
+  const minSquareSize = 30; // 최소 사각형 크기(px)
+  const radius = 60;
 
   function createSquares() {
     grid.innerHTML = "";
 
+    // 그리드 영역 크기 (패딩 제외됨)
     const gridWidth = grid.clientWidth;
     const gridHeight = grid.clientHeight;
 
+    // 열과 행 개수를 최소 크기와 간격 기준으로 계산
     const cols = Math.floor((gridWidth + gap) / (minSquareSize + gap));
     const rows = Math.floor((gridHeight + gap) / (minSquareSize + gap));
     const totalSquares = cols * rows;
 
-    const totalDuration = timePerSquare * totalSquares; // 전체 애니메이션 시간 (초)
-
     for (let i = 0; i < totalSquares; i++) {
       const square = document.createElement("div");
       square.classList.add("square");
-
-      const row = Math.floor(i / cols);
-      const col = i % cols;
-
-      // 순차 딜레이 계산
-      const delay = (row * cols + col) * timePerSquare;
-
-      // 카드 뒤집기 애니메이션 적용
-      square.style.animation = `flipColorChange ${totalDuration}s steps(1, end) infinite`;
-      square.style.animationDelay = `${delay}s`;
-
       grid.appendChild(square);
     }
   }
 
   createSquares();
 
-  // 마우스 오버 처리 – 애니메이션 일시정지 및 변형 효과 적용
   const squares = () => Array.from(grid.querySelectorAll(".square"));
+
   window.addEventListener("mousemove", (event) => {
     const mouseX = event.clientX;
     const mouseY = event.clientY;
@@ -47,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const centerY = rect.top + rect.height / 2;
       const distance = Math.hypot(mouseX - centerX, mouseY - centerY);
 
-      if (distance < 60) { // radius 값 유지
+      if (distance < radius) {
         square.classList.add("hover");
       } else {
         square.classList.remove("hover");
@@ -55,5 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  window.addEventListener("resize", createSquares);
+  window.addEventListener("resize", () => {
+    createSquares();
+  });
 });
