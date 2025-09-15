@@ -94,6 +94,19 @@ body {
   color: #f25100;
 }
 
+.footer {
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.footer .p1 {
+  letter-spacing: -0.025em;
+}
+
+.footer .p2 {
+  letter-spacing: -0.06em;
+}
+
 .right {
   background-color: #8ce2ff;
   padding: 15px;
