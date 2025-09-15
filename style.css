@@ -28,6 +28,7 @@ body {
   text-align: left;
   color: #8ce2ff;
   box-sizing: border-box;
+  height: 100%;
 }
 
 .left h1 {
@@ -96,6 +97,8 @@ body {
   font-size: 13px;
   line-height: 1.5;
   font-weight: 300;
+  margin-top: auto;
+  width: 100%;
 }
 
 .footer .p1 {
