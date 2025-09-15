@@ -42,7 +42,7 @@ body {
 /* 다이아몬드 콜론 */
 .diamond-colon {
   display: inline-block;
-  width: 8px;
+  width: 7px;
   height: 16px;
   margin-left: 8px;     /* 콜론과 '포인트' 텍스트 사이 간격 */
   position: relative;
@@ -55,11 +55,10 @@ body {
   content: "";
   position: absolute;
   left: 50%;
-  width: 8px;
-  height: 8px;
+  width: 5px;
+  height: 5px;
   background-color: #8ce2ff;  /* 원하는 색상 */
   transform: translateX(-50%) rotate(45deg);
-  border-radius: 1px;
 }
 
 /* 위쪽 다이아몬드 */
