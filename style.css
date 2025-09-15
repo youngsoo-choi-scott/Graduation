@@ -11,6 +11,10 @@ body {
   word-break: keep-all;
 }
 
+body a {
+  text-decoration: none;
+}
+
 .main-container {
   display: grid;
   grid-template-columns: 20% 80%;
@@ -87,6 +91,10 @@ body {
   letter-spacing: -0.06em;
   color: #8ce2ff;
   margin-bottom: 10px;
+}
+
+.header li a {
+  color: #8ce2ff;
 }
 
 .header li:hover {
