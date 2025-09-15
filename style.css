@@ -98,7 +98,7 @@ body a {
   color: #8ce2ff;
 }
 
-.header li:hover {
+.header li a:hover {
   color: #f25100;
 }
 
