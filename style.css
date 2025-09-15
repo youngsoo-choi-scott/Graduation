@@ -42,14 +42,14 @@ body {
   font-weight: 600;
   line-height: 1.2;
   letter-spacing: -0.025em;
-  height: 50%;
 }
 
 .diamond-colon {
   width: 7px;
+  height: 18px;
   margin-left: 8px;
   position: relative;
-  vertical-align: middle;
+  margin-bottom: 2px;
 }
 
 .diamond-colon::before,
