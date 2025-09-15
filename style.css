@@ -30,7 +30,8 @@ body {
   box-sizing: border-box;
 }
 
-.left h1 {
+.left h1 span {
+  display: block;
   color: #8ce2ff;
   font-size: 32px;
   font-weight: 700;
