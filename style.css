@@ -35,7 +35,7 @@ body {
 }
 
 .left h1 span {
-  display: block;
+  display: inline-block;
   color: #8ce2ff;
   font-size: 32px;
   font-weight: 700;
@@ -45,7 +45,6 @@ body {
 
 /* 다이아몬드 콜론 */
 .diamond-colon {
-  display: inline-block;
   width: 7px;
   height: 16px;
   margin-left: 8px;     /* 콜론과 '포인트' 텍스트 사이 간격 */
