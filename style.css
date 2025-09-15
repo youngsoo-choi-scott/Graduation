@@ -5,7 +5,9 @@ body {
   background-color: #8ce2ff;
   height: 100vh;
   overflow: hidden;
-  font-family: Pretendard, sans-serif;
+  font-family: 'Work Sans', Pretendard, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
   word-break: keep-all;
 }
 
@@ -28,7 +30,13 @@ body {
   box-sizing: border-box;
 }
 
-.left h1,
+.left h1 {
+  color: #8ce2ff;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 
+}
+
 .left p {
   color: #8ce2ff;
   margin: 0 0 10px 0;
