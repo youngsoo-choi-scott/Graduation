@@ -42,18 +42,16 @@ body {
   font-weight: 600;
   line-height: 1.2;
   letter-spacing: -0.025em;
+  height: 50%;
 }
 
-/* 다이아몬드 콜론 */
 .diamond-colon {
   width: 7px;
-  height: 16px;
-  margin-left: 8px;     /* 콜론과 '포인트' 텍스트 사이 간격 */
+  margin-left: 8px;
   position: relative;
   vertical-align: middle;
 }
 
-/* 위쪽 마름모 */
 .diamond-colon::before,
 .diamond-colon::after {
   content: "";
