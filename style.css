@@ -1,5 +1,10 @@
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
 
+::selection {
+  color: #000000;
+  background-color: #F25100;
+}
+
 body {
   margin: 0;
   background-color: #8ce2ff;
