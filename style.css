@@ -24,6 +24,7 @@ body {
   justify-content: flex-start;
   align-items: flex-start;
   background-color: #000000;
+  padding: 20px;
   text-align: left;
   color: #8ce2ff;
   box-sizing: border-box;
@@ -32,8 +33,6 @@ body {
 .left h1 {
   width: 100%;
   margin: 0;
-  display: grid;
-  padding: 20px;
 }
 
 .left h1 span {
