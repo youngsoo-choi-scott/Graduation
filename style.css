@@ -120,6 +120,12 @@ body a {
   display: block;
 }
 
+.footer .link-icon li{
+  width: 24px;
+  height: 24px;
+  margin-right: 12px;
+}
+
 .right {
   background-color: #8ce2ff;
   padding: 15px;
