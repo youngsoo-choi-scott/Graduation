@@ -110,6 +110,10 @@ body a {
   list-style: none;
 }
 
+.footer p {
+ margin: 0 0 24px 0; 
+}
+
 .footer .p1 {
   letter-spacing: -0.025em;
   display: block;
@@ -124,6 +128,8 @@ body a {
   display: flex;
   gap: 12px;
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .footer ul.link-icon li{
