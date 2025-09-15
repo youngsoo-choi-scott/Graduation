@@ -39,15 +39,17 @@ body {
   letter-spacing: -0.025em;
 }
 
+/* 다이아몬드 콜론 */
 .diamond-colon {
   display: inline-block;
   width: 8px;
   height: 16px;
-  margin: 0 8px;
+  margin-left: 8px;     /* 콜론과 '포인트' 텍스트 사이 간격 */
   position: relative;
   vertical-align: middle;
 }
 
+/* 위쪽 마름모 */
 .diamond-colon::before,
 .diamond-colon::after {
   content: "";
@@ -55,15 +57,17 @@ body {
   left: 50%;
   width: 8px;
   height: 8px;
-  background-color: #8ce2ff;
+  background-color: #8ce2ff;  /* 원하는 색상 */
   transform: translateX(-50%) rotate(45deg);
   border-radius: 1px;
 }
 
+/* 위쪽 다이아몬드 */
 .diamond-colon::before {
   top: 0;
 }
 
+/* 아래쪽 다이아몬드 */
 .diamond-colon::after {
   bottom: 0;
 }
