@@ -6,6 +6,7 @@ body {
   height: 100vh;
   overflow: hidden;
   font-family: Pretendard, sans-serif;
+  word-break: keep-all;
 }
 
 .main-container {
