@@ -34,7 +34,8 @@ body {
   color: #8ce2ff;
   font-weight: 700;
   font-size: 32px;
-  line-height: 
+  line-height: 1.2;
+  letter-spacing: -0.025em;
 }
 
 .left p {
