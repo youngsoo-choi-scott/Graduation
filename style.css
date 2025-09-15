@@ -120,10 +120,26 @@ body a {
   display: block;
 }
 
-.footer .link-icon li{
+.footer ul.link-icon {
+  display: flex;
+  gap: 12px;
+  list-style: none;
+}
+
+.footer ul.link-icon li{
   width: 24px;
   height: 24px;
-  margin-right: 12px;
+  flex-shrink: 0;
+}
+
+.footer ul.link-icon li a {
+  display: inline-flex;
+  width: 24px;
+  height: 24px;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: inherit;
 }
 
 .right {
