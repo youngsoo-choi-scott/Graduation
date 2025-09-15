@@ -41,8 +41,8 @@ body {
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(35px, 1fr)); /* 최소 35px */
-  grid-gap: 10px;
+  grid-template-columns: repeat(auto-fill, minmax(32px, 1fr)); /* 최소 32px */
+  grid-gap: 8px;
   width: 100%;
   height: 100%;
   box-sizing: border-box;
