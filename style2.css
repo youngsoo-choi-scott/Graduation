@@ -2,12 +2,12 @@
 
 ::selection {
   color: #000000;
-  background-color: #F25100;
+  background-color: #ffffff;
 }
 
 body {
   margin: 0;
-  background-color: #8ce2ff;
+  background-color: #ffffff;
   height: 100vh;
   overflow: hidden;
   font-family: 'Work Sans', Pretendard, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
@@ -32,10 +32,10 @@ body a {
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  background-color: #000000;
+  background-color: #f25100;
   padding: 20px;
   text-align: left;
-  color: #8ce2ff;
+  color: #ffffff;
   box-sizing: border-box;
   height: 100%;
 }
@@ -47,7 +47,7 @@ body a {
 
 .left h1 span {
   display: inline-block;
-  color: #8ce2ff;
+  color: #ffffff;
   font-size: 32px;
   font-weight: 600;
   line-height: 1.2;
@@ -69,7 +69,7 @@ body a {
   left: 50%;
   width: 5px;
   height: 5px;
-  background-color: #8ce2ff;  /* 원하는 색상 */
+  background-color: #ffffff;  /* 원하는 색상 */
   transform: translateX(-50%) rotate(45deg);
 }
 
@@ -95,16 +95,16 @@ body a {
   font-weight: 400;
   line-height: 1.5;
   letter-spacing: -0.06em;
-  color: #8ce2ff;
+  color: #ffffff;
   margin-bottom: 10px;
 }
 
 .header li a {
-  color: #8ce2ff;
+  color: #ffffff;
 }
 
 .header li a:hover {
-  color: #f25100;
+  color: #8CE2FF;
 }
 
 .footer {
@@ -155,7 +155,7 @@ body a {
 }
 
 .right {
-  background-color: #8ce2ff;
+  background-color: #ffffff;
   padding: 15px;
   box-sizing: border-box;
   overflow: hidden;
@@ -172,7 +172,7 @@ body a {
 }
 
 .square {
-  background-color: #8ce2ff;
+  background-color: #ffffff;
   aspect-ratio: 1 / 1;
   cursor: pointer;
   position: relative;
@@ -188,7 +188,7 @@ body a {
 
 @keyframes colorFlip {
   0%, 50% {
-    background-color: #8ce2ff;
+    background-color: #ffffff;
   }
   51%, 100% {
     background-color: #f25100;
@@ -196,7 +196,7 @@ body a {
 }
 
 .square.hover {
-  background-color: #8ce2ff !important;
+  background-color: #ffffff !important;
   border-color: #f25100;  /* 투명→주황색 단일 컬러 전환 */
   transform: rotate(45deg) scale(0.9);
   transition:
