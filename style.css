@@ -80,6 +80,22 @@ body {
   margin: 0 0 10px 0;
 }
 
+.header {
+  list-style: none;
+}
+
+.header li {
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: -0.06em;
+  color: #8ce2ff;
+}
+
+.header li:hover {
+  color: #f25100;
+}
+
 .right {
   background-color: #8ce2ff;
   padding: 15px;
