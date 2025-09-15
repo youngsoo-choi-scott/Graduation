@@ -18,6 +18,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const durationVariance = 4;    // ±4초 변동폭
 
     for (let i = 0; i < totalSquares; i++) {
+      if (Math.random() > 0.6) continue; // 약 40% 확률로만 생성
+      
       const square = document.createElement("div");
       square.classList.add("square");
 
