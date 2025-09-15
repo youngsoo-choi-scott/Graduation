@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
   const grid = document.querySelector(".right .grid");
-  const gap = 5;
-  const minSquareSize = 30;
+  const gap = 10;
+  const minSquareSize = 35;
   const radius = 100;
 
   function createSquares() {
