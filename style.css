@@ -82,6 +82,7 @@ body a {
   list-style: none;
   padding: 0;
   margin: 40px 0;
+  width: 100%;
 }
 
 .header li {
