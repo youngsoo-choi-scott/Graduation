@@ -32,10 +32,10 @@ body a {
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  background-color: #f25100;
+  background-color: #ffffff;
   padding: 20px;
   text-align: left;
-  color: #ffffff;
+  color: #f25100;
   box-sizing: border-box;
   height: 100%;
 }
@@ -47,7 +47,7 @@ body a {
 
 .left h1 span {
   display: inline-block;
-  color: #ffffff;
+  color: #f25100;
   font-size: 32px;
   font-weight: 600;
   line-height: 1.2;
@@ -69,7 +69,7 @@ body a {
   left: 50%;
   width: 5px;
   height: 5px;
-  background-color: #ffffff;  /* 원하는 색상 */
+  background-color: #f25100;  /* 원하는 색상 */
   transform: translateX(-50%) rotate(45deg);
 }
 
@@ -95,12 +95,12 @@ body a {
   font-weight: 400;
   line-height: 1.5;
   letter-spacing: -0.06em;
-  color: #ffffff;
+  color: #f25100;
   margin-bottom: 10px;
 }
 
 .header li a {
-  color: #ffffff;
+  color: #f25100;
 }
 
 .header li a:hover {
