@@ -21,7 +21,7 @@ body {
 .left {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: flex-start;
   background-color: #000000;
   padding: 20px;
