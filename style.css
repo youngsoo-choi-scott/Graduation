@@ -32,10 +32,39 @@ body {
 
 .left h1 {
   color: #8ce2ff;
-  font-weight: 700;
   font-size: 32px;
+  font-weight: 700;
   line-height: 1.2;
   letter-spacing: -0.025em;
+}
+
+.diamond-colon {
+  display: inline-block;
+  width: 8px;
+  height: 16px;
+  margin: 0 8px;
+  position: relative;
+  vertical-align: middle;
+}
+
+.diamond-colon::before,
+.diamond-colon::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  background-color: #8ce2ff;
+  transform: translateX(-50%) rotate(45deg);
+  border-radius: 1px;
+}
+
+.diamond-colon::before {
+  top: 0;
+}
+
+.diamond-colon::after {
+  bottom: 0;
 }
 
 .left p {
