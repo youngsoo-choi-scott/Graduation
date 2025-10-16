@@ -95,7 +95,7 @@ body a {
   font-size: 32px;
   font-weight: 400;
   line-height: 1.5;
-  letter-spacing: -0.06em;
+  letter-spacing: -0.025em;
   color: #f25100;
   margin-top: 10px;
   margin-bottom: 10px;
@@ -129,7 +129,7 @@ body a {
 }
 
 .footer .p2 {
-  letter-spacing: -0.06em;
+  letter-spacing: -0.025em;
   display: block;
 }
 
