@@ -44,6 +44,7 @@ body a {
 .left h1 {
   width: 100%;
   margin: 0;
+  border-bottom: 1px solid #f25100;
 }
 
 .left h1 span {
