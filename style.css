@@ -127,6 +127,10 @@ body a {
   color: #f25100;
 }
 
+.header.sub.on {
+  background-color: #8ce2ff;
+}
+
 .footer {
   font-size: 13px;
   line-height: 1.5;
