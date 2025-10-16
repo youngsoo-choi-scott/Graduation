@@ -16,6 +16,10 @@ body {
   word-break: keep-all;
 }
 
+body.sub {
+  background-color: #ffffff;
+}
+
 body a {
   text-decoration: none;
 }
