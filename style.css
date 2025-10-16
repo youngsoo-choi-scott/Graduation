@@ -38,6 +38,7 @@ body a {
   color: #f25100;
   box-sizing: border-box;
   height: 100%;
+  border-left: 1px solid #f25100;
 }
 
 .left h1 {
