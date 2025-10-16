@@ -109,6 +109,7 @@ body a {
 
 .header li a {
   color: #f25100;
+  display: block;
 }
 
 .header li:hover {
