@@ -107,7 +107,11 @@ body a {
   color: #f25100;
 }
 
-.header li a:hover {
+.header li:hover {
+  color: #f25100;
+}
+
+.header li:hover > .header li a {
   color: #8ce2ff;
 }
 
