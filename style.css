@@ -115,7 +115,7 @@ body a {
   background-color: #f25100;
 }
 
-.header li:hover .header li a {
+.header li:hover a {
   color: #8ce2ff;
 }
 
