@@ -97,6 +97,7 @@ body a {
   letter-spacing: -0.06em;
   color: #f25100;
   margin-bottom: 10px;
+  border-bottom: 1px solid #f25100;
 }
 
 .header li a {
