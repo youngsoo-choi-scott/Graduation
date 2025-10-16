@@ -45,6 +45,7 @@ body a {
   margin: 0;
   border-bottom: 1px solid #f25100;
   padding: 20px;
+  box-sizing: border-box;
 }
 
 .left h1 span {
@@ -117,6 +118,8 @@ body a {
   margin-top: auto;
   width: 100%;
   list-style: none;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
 .footer p {
