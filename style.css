@@ -48,7 +48,7 @@ body a {
 
 .left h1 span {
   display: inline-block;
-  color: #8ce2ff;
+  color: #f25100;
   font-size: 32px;
   font-weight: 600;
   line-height: 1.2;
@@ -70,7 +70,7 @@ body a {
   left: 50%;
   width: 5px;
   height: 5px;
-  background-color: #8ce2ff;  /* 원하는 색상 */
+  background-color: #f25100;  /* 원하는 색상 */
   transform: translateX(-50%) rotate(45deg);
 }
 
