@@ -36,7 +36,6 @@ body a {
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  background-color: #8ce2ff;
   text-align: left;
   color: #f25100;
   box-sizing: border-box;
@@ -165,7 +164,6 @@ body a {
 }
 
 .right {
-  background-color: #8ce2ff;
   padding: 15px;
   box-sizing: border-box;
   overflow: hidden;
