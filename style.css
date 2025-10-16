@@ -44,6 +44,7 @@ body a {
   width: 100%;
   margin: 0;
   border-bottom: 1px solid #f25100;
+  padding: 20px;
 }
 
 .left h1 span {
@@ -87,7 +88,6 @@ body a {
 .header {
   list-style: none;
   padding: 0;
-  margin: 40px 0;
   width: 100%;
 }
 
