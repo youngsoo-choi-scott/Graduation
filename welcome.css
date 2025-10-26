@@ -111,23 +111,13 @@ h1 {
 
 .enter a::after {
   content: '';
-  display: inline-block;
+  position: absolute;
   width: 10px;
   height: 10px;
-  transform: translateY(-50%);
   background: none;
-  border-top: 1px solid #8ce2ff;
-  border-right: 1px solid #8ce2ff;
-}
-
-.enter a::before {
-  content: '';
-  display: inline-block;
-  width: 10px;
-  height: 10px;
-  transform: rotate(45deg);
-  background: none;
-  border-top: 1px solid #8ce2ff;
+  border-top: 1px solid #000000;
+  border-right: 1px solid #000000;
+  left: 80px;
 }
 
 .subTitle {
