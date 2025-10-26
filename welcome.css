@@ -23,7 +23,6 @@ body {
 
 .contents-wrap {
   width: 390px;
-  padding: 0 24px;
   height: 100vh;
   background-color: #8ce2ff;
   color: #F25100;
@@ -64,6 +63,7 @@ body {
   font-size: 32px;
   font-weight: 800;
   line-height: 1.2; 
+  margin-top: 70px;
   margin-bottom: 10px;
 }
 
