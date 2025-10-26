@@ -104,16 +104,14 @@ h1 {
   color: #8ce2ff;
   background-color: #F25100;
   padding: 3px 7px;
-  position: relative;
   display: inline-flex;
   align-items: center;
 }
 
 .enter a .enter-icon {
   margin-left: 60px;
-  stroke: black;
-  width: 10px;
-  height: 10px;
+  width: 12px;
+  height: 12px;
   flex-shrink: 0;
   vertical-align: middle;
 }
