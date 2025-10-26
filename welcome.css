@@ -60,11 +60,13 @@ h1 {
 .subTitle {
   font-weight: 700;
   position: relative;
+  padding-left: 30px;
 }
 
 .subTitle::before{
   content: '';
   display: inline-block;
+  position: absolute;
   left: 0;
   top: 50%; 
   transform: translateY(-50%) rotate(45deg);
