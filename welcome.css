@@ -22,7 +22,7 @@ body {
  }
 
 .contents-wrap {
-  max-width: 390px;
+  width: 390px;
   padding: 0 24px;
   height: 100vh;
   background-color: #8ce2ff;
@@ -42,4 +42,14 @@ h1 {
 
 .subTitle {
   font-weight: 700;
+}
+
+.subTitle::before{
+  content: '';
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: #ff5733;
+  border-radius: 50%;
+  margin-right: 5px;
 }
