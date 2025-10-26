@@ -128,11 +128,11 @@ h1 {
 .subTitle::after{
   content: '';
   position: absolute;
-  left: 5px;
-  top: calc(50% - 5px); 
+  left: 6px;
+  top: calc(50% - 18%); 
   transform: rotate(45deg);
-  width: 8px;
-  height: 8px;
+  width: 7px;
+  height: 7px;
   background-color: #F25100;
 }
 
