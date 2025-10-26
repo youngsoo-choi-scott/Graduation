@@ -129,6 +129,10 @@ h1 {
 }
 */
 
+.pt96 {
+  padding-top: 96px;
+}
+
 .subTitle {
   font-weight: 700;
   position: relative;
