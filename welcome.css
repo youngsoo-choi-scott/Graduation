@@ -74,9 +74,14 @@ body {
   padding-top: 10px;
 }
 
+.info{
+  padding: 0 24px;
+}
+
 h1 {
   font-weight: 700;
   font-size: 22px;
+  padding-top: 70px;
 }
 
 .subTitle {
