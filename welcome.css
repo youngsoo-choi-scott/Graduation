@@ -84,6 +84,15 @@ h1 {
   padding-top: 70px;
 }
 
+.enter {
+  color: #8ce2ff;
+  background-color: #F25100;
+  font-size: 16px;
+  font-weight: 700;
+  width: 138px;
+  height: 30px;
+}
+
 .subTitle {
   font-weight: 700;
   position: relative;
