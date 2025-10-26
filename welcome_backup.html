@@ -69,28 +69,16 @@
   </div>
 
   <script>
-        // 지도 초기화
-        var mapOptions = {
-            center: new naver.maps.LatLng(36.8509, 127.1532), 
-            zoom: 10 // 줌 레벨
-        };
-
-        var map = new naver.maps.Map('map', mapOptions);
-
-        // 마커 추가
-        var marker = new naver.maps.Marker({
-            position: new naver.maps.LatLng(36.8509, 127.1532),
-            map: map,
-            title: "10공학관"
-        });
-
-        // 지도 클릭 이벤트
-        naver.maps.Event.addListener(map, 'click', function(e) {
-            var clickLat = e.coord.lat();
-            var clickLng = e.coord.lng();
-            alert('클릭한 위치 좌표: ' + clickLat + ', ' + clickLng);
-        });
-    </script>
+		var map = new naver.maps.Map('map', {
+		    center: new naver.maps.LatLng(36.8509, 127.1532), // 10공학관
+		    zoom: 15
+		});
+		
+		var marker = new naver.maps.Marker({
+		    position: new naver.maps.LatLng(36.8509, 127.1532),
+		    map: map
+		});
+	</script>
   
 </body>
 </html>
