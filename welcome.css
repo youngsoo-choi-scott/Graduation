@@ -90,12 +90,20 @@ h1 {
 }
 
 .enter {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 16px;
+  box-sizing: border-box;
+}
+
+.enter a{
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none;
   color: #8ce2ff;
   background-color: #F25100;
-  font-size: 16px;
-  font-weight: 700;
-  width: 138px;
-  height: 30px;
+  padding: 3px 7px;
 }
 
 .subTitle {
