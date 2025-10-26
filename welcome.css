@@ -111,13 +111,13 @@ h1 {
 
 .enter a::after {
   content: '';
-  position: absolute;
+  display: inline-block;
   width: 10px;
   height: 10px;
   background: none;
   border-top: 1px solid #000000;
   border-right: 1px solid #000000;
-  left: 80px;
+  margin-left: 60px;
 }
 
 .subTitle {
