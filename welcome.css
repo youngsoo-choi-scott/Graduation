@@ -109,6 +109,30 @@ h1 {
   align-items: center;
 }
 
+.enter a::before {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  top: 50%;
+  left: 100%;
+  transform: translateY(-50%);
+  border-top: 2px solid #000;
+  border-right: 2px solid #000;
+}
+
+
+.enter a::after {
+  content: '';
+  position: absolute;
+  width: 12px;
+  top: 50%;
+  left: calc(100% + 2px);
+  transform: translateY(-50%) rotate(45deg);
+  border-top: 2px solid black;
+}
+
+/*
 .enter a::after {
   content: '';
   display: inline-block;
@@ -119,6 +143,7 @@ h1 {
   border-right: 1px solid #000000;
   margin-left: 60px;
 }
+*/
 
 .subTitle {
   font-weight: 700;
