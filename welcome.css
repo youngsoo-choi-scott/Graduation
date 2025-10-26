@@ -13,10 +13,11 @@
 body {
   margin: 0;
   background-color: #8ce2ff;
+  color: #F25100;
   height: 100vh;
-  overflow: hidden;
+  overflow: scroll;
   font-family: Pretendard, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
-  font-weight: 400;
+  font-weight: 500;
   font-size: 16px;
   word-break: keep-all;
 }
