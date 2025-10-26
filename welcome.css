@@ -46,7 +46,7 @@ body {
   border-radius: 10px; /* 둥근 모서리 */
 }
 
-.container::-webkit-scrollbar-thumb {
+.contents-wrap::-webkit-scrollbar-thumb {
   background-color: #F25100; /* 스크롤 막대 색상 */
   border-radius: 10px; /* 둥근 모서리 */
   border: 2px solid #f0f0f0; /* 스크롤 막대와 트랙 사이의 간격 */
