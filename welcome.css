@@ -66,6 +66,10 @@ body {
   padding-top: 70px;
 }
 
+.pt10{
+  padding-top: 10px;
+}
+
 h1 {
   font-weight: 700;
   font-size: 22px;
