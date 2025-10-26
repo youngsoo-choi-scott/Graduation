@@ -37,7 +37,7 @@ body {
 
 /* 스크롤바 스타일링 */
 .contents-wrap::-webkit-scrollbar {
-  width: 6px; /* 스크롤바의 두께 */
+  width: 4px; /* 스크롤바의 두께 */
 }
 
 .contents-wrap::-webkit-scrollbar-track {
@@ -48,7 +48,7 @@ body {
 .contents-wrap::-webkit-scrollbar-thumb {
   background-color: #F25100; /* 스크롤 막대 색상 */
   border-radius: 10px; /* 둥근 모서리 */
-  border: 2px solid #f0f0f0; /* 스크롤 막대와 트랙 사이의 간격 */
+  border: 0px solid #F25100; /* 스크롤 막대와 트랙 사이의 간격 */
 }
 
 .visual {
