@@ -42,14 +42,17 @@ h1 {
 
 .subTitle {
   font-weight: 700;
+  position: relative;
 }
 
 .subTitle::before{
   content: '';
   display: inline-block;
-  width: 10px;
-  height: 10px;
-  background-color: #ff5733;
-  border-radius: 50%;
-  margin-right: 5px;
+  left: 0;
+  top: 50%; 
+  transform: translateY(-50%) rotate(45deg);
+  width: 18px;
+  height: 18px;
+  background-color: #8ce2ff;
+  border: 1px solid #F25100;
 }
