@@ -105,21 +105,30 @@ h1 {
   background-color: #F25100;
   padding: 3px 7px;
   position: relative;
+  display: inline-flex;
+  align-items: center;
 }
 
 .enter a::after {
   content: '';
-  position: absolute;
+  display: inline-block;
   width: 10px;
   height: 10px;
-  top: 50%;
-  left: 60px;
   transform: translateY(-50%);
   background: none;
   border-top: 1px solid #8ce2ff;
   border-right: 1px solid #8ce2ff;
 }
 
+.enter a::before {
+  content: '';
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  transform: rotate(45deg);
+  background: none;
+  border-top: 1px solid #8ce2ff;
+}
 
 .subTitle {
   font-weight: 700;
