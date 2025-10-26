@@ -15,7 +15,6 @@
 </head>
 <body>
   <div class="contents-wrap">
-    
     <div class="visual">
       <div class="title">
         <span>포인트</span>
@@ -23,7 +22,6 @@
       </div>
       <p class="pt10">제18회 국립공주대학교<br>디자인컨버전스학과<br>졸업전시회</p>
     </div>
-
     <div class="info">
       <h1>제18회 국립공주대학교<br>디자인컨버전스학과<br>졸업전시회</h1>
       <div class="enter">
@@ -50,8 +48,32 @@
         <div class="map"></div>
       </div>
     </div>
-    
   </div>
+
+  <script>
+        // 지도 초기화
+        var mapOptions = {
+            center: new naver.maps.LatLng(36.8509, 127.1532), 
+            zoom: 10 // 줌 레벨
+        };
+
+        var map = new naver.maps.Map('map', mapOptions);
+
+        // 마커 추가
+        var marker = new naver.maps.Marker({
+            position: new naver.maps.LatLng(36.8509, 127.1532),
+            map: map,
+            title: "10공학관"
+        });
+
+        // 지도 클릭 이벤트
+        naver.maps.Event.addListener(map, 'click', function(e) {
+            var clickLat = e.coord.lat();
+            var clickLng = e.coord.lng();
+            alert('클릭한 위치 좌표: ' + clickLat + ', ' + clickLng);
+        });
+    </script>
+  
 </body>
 </html>
 
