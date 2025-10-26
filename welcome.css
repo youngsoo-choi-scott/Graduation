@@ -115,7 +115,6 @@ h1 {
 
 .subTitle::before{
   content: '';
-  display: inline-block;
   position: absolute;
   left: 3px;
   top: 50%; 
@@ -124,6 +123,17 @@ h1 {
   height: 12px;
   background-color: #8ce2ff;
   border: 1px solid #F25100;
+}
+
+.subTitle::after{
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: calc(50% - 5px); 
+  transform: rotate(45deg);
+  width: 8px;
+  height: 8px;
+  background-color: #F25100;
 }
 
 .b {
