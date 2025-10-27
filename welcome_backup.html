@@ -6,7 +6,7 @@
   <title>2025 kjdc | 포인트: 가능성의 순간</title>
   <link rel="stylesheet" href="welcome.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
-  <script type="text/javascript" src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=sjkvlvspe8"></script>
+  <script type="text/javascript" src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpKeyId=sjkvlvspe8"></script>
   <!-- favicon -->
   <link rel="icon" href="favicon/favicon.ico" type="image/x-icon"> <!-- Favicon 기본 -->
   <link rel="icon" href="favicon/favicon.png" type="image/png">    <!-- PNG 포맷 -->
@@ -69,16 +69,13 @@
   </div>
 
   <script>
-		var map = new naver.maps.Map('map', {
-		    center: new naver.maps.LatLng(36.8509, 127.1532), // 10공학관
-		    zoom: 15
-		});
-		
-		var marker = new naver.maps.Marker({
-		    position: new naver.maps.LatLng(36.8509, 127.1532),
-		    map: map
-		});
-	</script>
+	var mapOptions = {
+	    center: new naver.maps.LatLng(36.8509171, 127.153189),
+	    zoom: 10
+	};
+	
+	var map = new naver.maps.Map('map', mapOptions);
+</script>
   
 </body>
 </html>
