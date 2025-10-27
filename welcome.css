@@ -68,11 +68,7 @@ body {
   padding-top: 70px;
 }
 
-.title span {
-  display: block;
-}
-
-.title span.colon {
+.colon {
   position: relative;
   display: inline-block;
 }
