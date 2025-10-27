@@ -120,31 +120,31 @@
 
   <script>
 	var mapOptions = {
-	    center: new naver.maps.LatLng(36.8509171, 127.153189),
-	    zoom: 15
+    center: new naver.maps.LatLng(36.8509171, 127.153189),
+    zoom: 15
 	};
 	
 	var map = new naver.maps.Map('map', mapOptions);
 
 	var marker = new naver.maps.Marker({
-        position: new naver.maps.LatLng(36.8509171, 127.153189), 
-        map: map 
-    });
+    position: new naver.maps.LatLng(36.8509171, 127.153189), 
+    map: map 
+	});
 
 	var infoWindow = new naver.maps.InfoWindow({
-        : `<div style="width:200px;text-align:center;padding:10px;">
-                	<strong>천안공과대학 10공학관</strong><br>
-                    <a href="https://map.naver.com/v5/search/공주대학교 천안캠퍼스 제10공학관" target="_blank" style="color:#007BFF;text-decoration:none;">네이버 지도에서 보기</a>
-                 </div>` 
-    });
+    content: `<div style="width:200px;text-align:center;padding:10px;">
+                <strong>천안공과대학 10공학관</strong><br>
+                <a href="https://map.naver.com/v5/search/공주대학교 천안캠퍼스 제10공학관" target="_blank" style="color:#007BFF;text-decoration:none;">네이버 지도에서 보기</a>
+              </div>`
+	});
 
 	naver.maps.Event.addListener(marker, 'click', function() {
-            if (infoWindow.getMap()) {
-                infoWindow.close(); 
-            } else {
-                infoWindow.open(map, marker); 
-            }
-    }); 
+    if (infoWindow.getMap()) {
+        infoWindow.close(); 
+    } else {
+        infoWindow.open(map, marker); 
+    }
+	});
 
 	  
 	// JavaScript (간단한 스크롤 이벤트 핸들러)
