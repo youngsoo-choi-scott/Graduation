@@ -86,22 +86,19 @@ body {
   content: '';
   position: absolute;
   left: 50%;
-  transform: translateX(-50%);
-  width: 8px;
-  height: 8px;
+  width: 6px;
+  height: 6px;
   background-color: #F25100;
   transform-origin: center;
-  border-radius: 2px;
   transform: rotate(45deg);
 }
 
 .colon::before {
-  top: 0;
+  top: 1px;
 }
 
 .colon::after {
-  bottom: 0;
-  transform: translateX(-50%) rotate(45deg);
+  bottom: 1px;
 }
 
 .pt10 {
