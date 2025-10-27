@@ -85,7 +85,7 @@ body {
   display: block;
   width: 6px;
   height: 6px;
-  background-color: black; /* 마름모 색상 */
+  background-color: #F25100;
   transform: rotate(45deg); /* 사각형을 마름모로 */
 }
 
@@ -97,7 +97,7 @@ body {
   display: block;
   width: 6px;
   height: 6px;
-  background-color: black; /* 마름모 색상 */
+  background-color: #F25100;
   transform: rotate(45deg); /* 사각형을 마름모로 */
 }
 
