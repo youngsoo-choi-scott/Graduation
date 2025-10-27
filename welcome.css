@@ -169,14 +169,8 @@ h1 {
   text-align: right;
 }
 
-.tar .subTitle::before {
-  left: auto;
-  right: 0;
-}
-
 .tar .subTitle::after {
-  left: auto;
-  right: 6px;
+  left: 8.5%;
 }
 
 .b {
