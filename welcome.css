@@ -220,16 +220,22 @@ ul.road li {
 .graphic1 {
   position: absolute;
   width: 120px;
+  top: 24%;
+  left: 4%;
 }
 
 .graphic2 {
   position: absolute;
   width: 80px;
+  top: 31%;
+  right: 6%;
 }
 
 .graphic3 {
   position: absolute;
   width: 160px;
+  top: 44%;
+  left: -15%;
 }
 
 .footer {
