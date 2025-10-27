@@ -207,3 +207,7 @@ ul.road li{
   margin-bottom: 10px;
   gap: 20px;
 }
+
+.link-icon li a {
+  display: block;
+}
