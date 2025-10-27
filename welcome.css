@@ -218,15 +218,18 @@ ul.road li {
 }
 
 .graphic1 {
-  
+  position: absolute;
+  width: 120px;
 }
 
 .graphic2 {
-  
+  position: absolute;
+  width: 80px;
 }
 
 .graphic3 {
-  
+  position: absolute;
+  width: 160px;
 }
 
 .footer {
