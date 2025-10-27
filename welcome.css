@@ -142,6 +142,7 @@ h1 {
   font-weight: 700;
   position: relative;
   padding-left: 26px;
+  display: inline-block;
   margin-bottom: 10px;
 }
 
@@ -151,8 +152,8 @@ h1 {
   left: 3px;
   top: 50%; 
   transform: translateY(-50%) rotate(45deg);
-  width: 12px;
-  height: 12px;
+  width: 0.8rem;
+  height: 0.8rem;
   background-color: #8ce2ff;
   border: 1px solid #F25100;
 }
@@ -160,11 +161,11 @@ h1 {
 .subTitle::after{
   content: '';
   position: absolute;
-  left: 6px;
-  top: calc(50% - 14%); 
-  transform: rotate(45deg);
-  width: 7px;
-  height: 7px;
+  left: 10px;
+  top: 50%; 
+  transform: translate(-50%, -50%) rotate(45deg);
+  width: 0.5rem;
+  height: 0.5rem;
   background-color: #F25100;
 }
 
