@@ -68,33 +68,40 @@ body {
   padding-top: 70px;
 }
 
+.first-line {
+  display: inline-block;
+  position: relative;
+}
+
 .colon {
   position: relative;
   display: inline-block;
+  margin-left: 4px;
+  width: 8px;
+  height: 22px;
 }
 
-.title span.colon::after {
+.colon::before,
+.colon::after {
   content: '';
   position: absolute;
-  top: 50%; /* 상하 위치를 중앙에 맞추기 */
-  left: 2px; /* 텍스트와의 간격 */
-  display: block;
-  width: 6px;
-  height: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 8px;
+  height: 8px;
   background-color: #F25100;
-  transform: rotate(45deg); /* 사각형을 마름모로 */
+  transform-origin: center;
+  border-radius: 2px;
+  transform: rotate(45deg);
 }
 
-.title span.colon::before {
-  content: '';
-  position: absolute;
-  top: calc(50% - 10px); /* 위쪽 마름모의 위치 */
-  left: 2px;
-  display: block;
-  width: 6px;
-  height: 6px;
-  background-color: #F25100;
-  transform: rotate(45deg); /* 사각형을 마름모로 */
+.colon::before {
+  top: 0;
+}
+
+.colon::after {
+  bottom: 0;
+  transform: translateX(-50%) rotate(45deg);
 }
 
 .pt10 {
