@@ -16,7 +16,7 @@
 <body>
   <div class="contents-wrap">
 	  
-    <div class="visual content hidden">
+    <div class="visual">
       <div class="title">
         <div class="first-line">포인트<span class="colon"></span></div>
         <div class="second-line">가능성의 순간</div>
@@ -34,14 +34,14 @@
           </svg>
         </a>
       </div>
-      <div class="pt120 tar content hidden">
+      <div class="pt120 tar">
         <p><span class="b">《포인트: 가능성의 순간》</span>에 초대합니다. <br>수많은 길 위 각자의 선택과 변화, <br>우리의 가능성을 느껴보세요!</p>
       </div>
-      <div class="pt120 content hidden">
+      <div class="pt120">
         <p class="subTitle">날짜 | DATE</p>
         <p>2025. 11. 13(목) – 11. 19(수) <br>10:00 AM – 6:00 PM</p>
       </div>
-      <div class="pt120 tar content hidden">
+      <div class="pt120 tar">
         <p class="subTitle">장소 | PLACE</p>
         <p>국립공주대학교 <br>천안공과대학 10공학관 1F 다목적홀 <br>(천안대로 1223-24, 신당동 592)</p>
       </div>
@@ -144,21 +144,6 @@
     } else {
         infoWindow.open(map, marker); 
     }
-	});
-
-	  
-	// JavaScript (간단한 스크롤 이벤트 핸들러)
-	window.addEventListener('scroll', () => {
-	  const contents = document.querySelectorAll('.content.hidden');
-	  const windowBottom = window.innerHeight + window.scrollY;
-	
-	  contents.forEach(el => {
-	    const elTop = el.offsetTop;
-	    if (windowBottom > elTop + 100) { // 100px 줘서 약간 여유있게 설정
-	      el.classList.add('visible');
-	      el.classList.remove('hidden');
-	    }
-	  });
 	});
 </script>
   
