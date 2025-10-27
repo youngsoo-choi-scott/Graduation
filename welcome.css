@@ -134,10 +134,6 @@ h1 {
   padding-top: 96px;
 }
 
-.tar {
-  text-align: right;
-}
-
 .subTitle {
   font-weight: 700;
   position: relative;
@@ -167,6 +163,26 @@ h1 {
   width: 0.5rem;
   height: 0.5rem;
   background-color: #F25100;
+}
+
+.tar {
+  text-align: right;
+}
+
+.tar .subTitle {
+  text-align: right;
+  padding-right: 26px;
+  padding-left: 0;
+}
+
+.tar .subTitle::before {
+  left: auto;
+  right: 0;
+}
+
+.tar .subTitle::after {
+  left: auto;
+  right: 6px;
 }
 
 .b {
