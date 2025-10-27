@@ -80,6 +80,21 @@
         position: new naver.maps.LatLng(36.8509171, 127.153189), 
         map: map 
     });
+
+	var infoWindow = new naver.maps.InfoWindow({
+        content: `<div style="width:200px;text-align:center;padding:10px;">
+                	<strong>10공학관</strong><br>
+                    <a href="https://map.naver.com/v5/search/10공학관" target="_blank" style="color:#007BFF;text-decoration:none;">네이버 지도에서 보기</a>
+                 </div>` 
+    });
+
+	naver.maps.Event.addListener(marker, 'click', function() {
+            if (infoWindow.getMap()) {
+                infoWindow.close(); 
+            } else {
+                infoWindow.open(map, marker); 
+            }
+    });
 </script>
   
 </body>
