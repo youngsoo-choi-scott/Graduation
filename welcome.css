@@ -134,6 +134,10 @@ h1 {
   padding-top: 96px;
 }
 
+.tar {
+  text-align: right;
+}
+
 .subTitle {
   font-weight: 700;
   position: relative;
