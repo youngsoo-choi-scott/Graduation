@@ -186,3 +186,11 @@ ul.road li{
   padding-top: 5px;
   font-size: 16px;
 }
+
+.footer{
+  text-align: center;
+}
+
+.footer p{
+  font-size: 14px;
+}
