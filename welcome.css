@@ -169,12 +169,6 @@ h1 {
   text-align: right;
 }
 
-.tar .subTitle {
-  text-align: right;
-  padding-right: 26px;
-  padding-left: 0;
-}
-
 .tar .subTitle::before {
   left: auto;
   right: 0;
