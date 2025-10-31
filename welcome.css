@@ -294,7 +294,7 @@ ul.road li {
   width: 100%;
   margin-top: 60px;
   align-items: center;
-  animation: rotateAnimation 5s linear infinite;
+  animation: rotateAnimation 10s linear infinite;
 }
 
 .diamond img {
