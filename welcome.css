@@ -13,7 +13,7 @@
 
 body {
   margin: 0;
-  background-color: #000000;
+  background-color: #ffffff;
   height: 100vh;
   overflow: hidden;
   display: flex; 
@@ -287,4 +287,17 @@ ul.road li {
 .content.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+.diamond {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 30px;
+  align-items: center;
+}
+
+.diamond img {
+  width: 80%;
+  height: auto;
 }
