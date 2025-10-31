@@ -294,9 +294,19 @@ ul.road li {
   width: 100%;
   margin-top: 60px;
   align-items: center;
+  animation: rotateAnimation 5s linear infinite;
 }
 
 .diamond img {
   width: 80%;
   height: auto;
+}
+
+@keyframes rotateAnimation {
+  from {
+    transform: rotate(0deg); /* 처음은 0도 */
+  }
+  to {
+    transform: rotate(360deg); /* 끝은 360도 */
+  }
 }
