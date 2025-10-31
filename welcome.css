@@ -68,6 +68,20 @@ body {
   box-sizing: border-box;
 }
 
+.visual2-top {
+  display: flex;
+}
+
+.visual2-top p {
+  font-size: 14px; 
+  width: 100%;
+}
+
+.visual2-text {
+  font-size: 16px; 
+  width: 100%;
+}
+
 .title {
   font-size: 32px;
   font-weight: 800;
