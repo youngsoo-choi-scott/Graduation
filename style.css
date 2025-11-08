@@ -11,7 +11,7 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #8ce2ff; /* 트랙(스크롤바 배경) 색상 */
+  background: #ffffff; /* 트랙(스크롤바 배경) 색상 */
   border-radius: 10px; /* 둥근 모서리 */
 }
 
