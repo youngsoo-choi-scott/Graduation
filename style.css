@@ -5,6 +5,23 @@
   background-color: #F25100;
 }
 
+/* 스크롤바 스타일링 */
+::-webkit-scrollbar {
+  width: 4px; /* 스크롤바의 두께 */
+}
+
+::-webkit-scrollbar-track {
+  background: #8ce2ff; /* 트랙(스크롤바 배경) 색상 */
+  border-radius: 10px; /* 둥근 모서리 */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #F25100; /* 스크롤 막대 색상 */
+  border-radius: 10px; /* 둥근 모서리 */
+  border: 0px solid #F25100; /* 스크롤 막대와 트랙 사이의 간격 */
+}
+
+
 body {
   margin: 0;
   background-color: #8ce2ff;
