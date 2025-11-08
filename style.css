@@ -339,3 +339,17 @@ body a {
   letter-spacing: -0.025em;
   display: block;
 }
+
+.right-top-table tbody {
+  display: block;
+}
+
+.right-top-table tr {
+  display: block;
+}
+
+.right-top-table td {
+  width: 25%;
+  padding: 8px 0;
+  margin: 0;
+}
