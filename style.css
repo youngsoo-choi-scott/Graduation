@@ -346,6 +346,8 @@ body a {
 
 .right-top-table tr {
   display: flex;
+  width: 100%;
+  border-bottom: 1px solid #f25100;
 }
 
 .right-top-table td {
