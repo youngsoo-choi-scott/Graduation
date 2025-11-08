@@ -279,9 +279,14 @@ body a {
   width: 50%;
 }
 
+.mb140 {
+  margin-bottom: 140px;
+}
+
 .about-poster {
   width: 100%;
   height: auto;
+  overflow: hidden;
 }
 
 .about-poster img {
