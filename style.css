@@ -240,3 +240,23 @@ body a {
   border-radius: 2px;
   pointer-events: none;
 }
+
+
+
+
+
+
+
+/* 서브페이지 */
+.right-top {
+  font-size: 32px;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+  color: #f25100;
+}
+
+.right-top-text {
+  font-size: 18px;
+  line-height: 1.5;
+  letter-spacing: -0.025em;
+}
