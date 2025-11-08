@@ -345,7 +345,7 @@ body a {
 }
 
 .right-top-table tr {
-  display: block;
+  display: flex;
 }
 
 .right-top-table td {
