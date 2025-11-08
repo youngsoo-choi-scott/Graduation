@@ -248,6 +248,10 @@ body a {
 
 
 /* 서브페이지 */
+.ofs {
+  overflow: scroll !important;
+}
+
 .right-top {
   letter-spacing: -0.025em;
 }
