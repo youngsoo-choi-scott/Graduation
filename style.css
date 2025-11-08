@@ -283,6 +283,10 @@ body a {
   border-bottom: 1px solid #f25100;
 }
 
+.right-top h1.eng{
+  font-weight: 500;
+}
+
 .right-top-text {
   font-size: 18px;
   line-height: 1.5;
@@ -304,6 +308,8 @@ body a {
   color: #1a1a1a;
   font-weight: 400;
   width: 100%;
+  display: block;
+  margin-bottom: 100px;
 }
 
 .mb140 {
