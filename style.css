@@ -302,6 +302,16 @@ body a {
   margin: 20px 0 0 0;
 }
 
+.right-top-info {
+  font-size: 18px;
+  line-height: 1.5;
+  color: #1a1a1a;
+  font-weight: 400;
+  width: 100%;
+  margin-bottom: 140px;
+  word-break: keep-all;
+}
+
 .right-top-span {
   font-size: 18px;
   line-height: 1.75;
