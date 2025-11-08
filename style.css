@@ -332,3 +332,10 @@ body a {
   border: 0;
 }
 
+.right-top-table {
+  color: #1a1a1a;
+  font-size: 18px;
+  line-height: 1.5;
+  letter-spacing: -0.025em;
+  display: block;
+}
