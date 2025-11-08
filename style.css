@@ -250,15 +250,27 @@ body a {
 /* 서브페이지 */
 .right-top {
   letter-spacing: -0.025em;
-  color: #f25100;
 }
 
 .right-top h1{
   font-size: 32px;
   line-height: 1.2;
+  font-weight: 600;
+  color: #f25100;
+  margin: 0;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #f25100;
 }
 
 .right-top-text {
   font-size: 18px;
   line-height: 1.5;
+  color: #1a1a1a;
+  font-weight: 400;
+  display: flex;
+  width: 100%;
+}
+
+.right-top-text p{
+  width: 50%;
 }
