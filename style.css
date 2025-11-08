@@ -273,10 +273,12 @@ body a {
   font-weight: 400;
   display: flex;
   width: 100%;
+  margin-bottom: 60px;
 }
 
 .right-top-text p{
   width: 50%;
+  margin: 20px 0 0 0;
 }
 
 .mb140 {
