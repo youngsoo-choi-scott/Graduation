@@ -281,7 +281,12 @@ body a {
 
 .about-poster {
   width: 100%;
-  height: 
+  height: auto;
+}
+
+.about-poster img {
+  width: 50%;
+  height: auto;
 }
 
 .video-container {
