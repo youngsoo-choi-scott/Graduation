@@ -275,6 +275,10 @@ body a {
   width: 100%;
 }
 
+.right-top-text p{
+  width: 50%;
+}
+
 .video-container {
   position: relative; 
   width: 100%;
@@ -292,6 +296,3 @@ body a {
   border: 0;
 }
 
-.right-top-text p{
-  width: 50%;
-}
