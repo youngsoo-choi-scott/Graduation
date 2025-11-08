@@ -249,7 +249,7 @@ body a {
 
 /* 서브페이지 */
 .ofs {
-  overflow: scroll !important;
+  overflow-y: scroll !important;
 }
 
 .right-top {
@@ -287,6 +287,8 @@ body a {
   width: 100%;
   height: auto;
   overflow: hidden;
+  display: flex;
+  justify-content: center;
 }
 
 .about-poster img {
