@@ -451,7 +451,6 @@ body a {
   padding: 0;
   margin: 0;
   list-style: none;
-  border-bottom: 1px solid #f25100;
   display: flex;
   flex-wrap: wrap;
 }
@@ -461,10 +460,11 @@ body a {
   height: auto;
   box-sizing: border-box;
   border-right: 1px solid #f25100;
+  border-bottom: 1px solid #f25100;
 }
 
 .designer-list ul li:nth-child(4n) {
-  border: 0;
+  border-right: 0;
 }
 
 .designer-list ul li a {
