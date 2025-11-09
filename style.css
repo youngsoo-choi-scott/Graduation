@@ -440,6 +440,7 @@ body a {
 .designer-list {
   display: block;
   margin-top: 20px;
+  margin-bottom: 100px;
 }
 
 .designer-list ul {
