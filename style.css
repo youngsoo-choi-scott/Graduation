@@ -398,7 +398,11 @@ body a {
   letter-spacing: -0.025em;
   border: 0;
   border-right: 1px solid #f25100;
-  
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: white url('images/select_arrow.svg') no-repeat right center;
+  background-size: 24px;
 }
 
 .list-filter-search {
