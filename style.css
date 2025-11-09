@@ -455,11 +455,15 @@ body a {
   width: 25%;
   height: auto;
   border-right: 1px solid #f25100;
-  padding: 0 20px 20px 20px;
 }
 
 .designer-list ul > :nth-child(4) {
   border: 0;
+}
+
+.designer-list ul li a {
+  display: block;
+  padding: 0 20px 20px 20px;
 }
 
 .designer-list ul li a img {
