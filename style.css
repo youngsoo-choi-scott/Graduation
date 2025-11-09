@@ -441,7 +441,7 @@ body a {
   display: block;
 }
 
-.designer-list ul{
+.designer-list ul {
   padding: 0;
   margin: 0;
   list-style: none;
@@ -449,14 +449,18 @@ body a {
   display: flex;
 }
 
-.designer-list ul li{
+.designer-list ul li {
   width: 25%;
   height: auto;
   border-right: 1px solid #f25100;
   padding: 0 20px 20px 20px;
 }
 
-.designer-list ul li a p{
+.designer-list ul li:last-child {
+  border: 0;
+}
+
+.designer-list ul li a p {
   color: #1a1a1a;
   text-decoration: none;
   font-size: 18px;
@@ -466,6 +470,6 @@ body a {
   margin: 10px 0 0 0;
 }
 
-.designer-list ul li a span{
+.designer-list ul li a span {
   display: block;
 }
