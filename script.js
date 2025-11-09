@@ -140,20 +140,20 @@ document.querySelector('select[style="padding-left: 10px;"]').addEventListener("
 
 
 
-// 검색 기능 구현
-document.querySelector(".list-filter-search button").addEventListener("click", function () {
-  const searchInput = document.querySelector(".list-filter-search input").value.toLowerCase();
-  const items = document.querySelectorAll(".designer-list ul li");
+// 실시간 검색 기능
+document.querySelector(".list-filter-search input").addEventListener("input", function () {
+  const searchInput = this.value.toLowerCase(); // 검색창에 입력된 텍스트 (소문자로 변환)
+  const items = document.querySelectorAll(".designer-list ul li"); // 모든 디자이너 항목
 
   items.forEach((item) => {
     const name = item.querySelector("p span:first-child").innerText.toLowerCase(); // 한글 이름
     const englishName = item.querySelector("p span:last-child").innerText.toLowerCase(); // 영문 이름
 
-    // 검색어 포함 여부 확인
+    // 입력된 텍스트가 이름이나 영문 이름에 포함되었는지 여부 확인
     if (name.includes(searchInput) || englishName.includes(searchInput)) {
-      item.style.display = "block"; // 검색 조건 일치 시 보이기
+      item.style.display = "block"; // 관련 결과는 보이기
     } else {
-      item.style.display = "none"; // 조건에 맞지 않으면 숨기기
+      item.style.display = "none"; // 나머지는 숨기기
     }
   });
 });
@@ -162,11 +162,8 @@ document.querySelector(".list-filter-search button").addEventListener("click", f
 
 
 // 검색 입력 필드가 비는 경우 모든 항목 표시
-document.querySelector(".list-filter-search input").addEventListener("input", function () {
-  if (this.value.trim() === "") {
-    const items = document.querySelectorAll(".designer-list ul li");
-    items.forEach((item) => {
-      item.style.display = "block"; // 검색 조건 초기화
-    });
-  }
-});
+if (name.includes(searchInput) || englishName.includes(searchInput)) {
+  item.style.display = "block"; // 모든 항목 표시
+} else {
+  item.style.display = "none"; // 숨기기
+}
