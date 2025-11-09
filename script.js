@@ -94,3 +94,26 @@ document.addEventListener("DOMContentLoaded", function () {
     createSquares();
   });
 });
+
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  // DOM 요소 가져오기
+  const filterSelect = document.getElementById("filterSelect");
+  const designers = document.querySelectorAll(".designer-list li"); // 모든 <li>
+
+  // select 태그 변경 이벤트 핸들링
+  filterSelect.addEventListener("change", function () {
+    const selectedMajor = filterSelect.value;
+
+    // 각 <li>를 확인하며 필터링
+    designers.forEach((designer) => {
+      if (selectedMajor === "all" || designer.dataset.major === selectedMajor) {
+        designer.classList.remove("hidden"); // 보여주기
+      } else {
+        designer.classList.add("hidden"); // 숨기기
+      }
+    });
+  });
+});
