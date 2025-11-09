@@ -118,23 +118,23 @@ document.getElementById("category").addEventListener("change", function() {
 
 // 정렬 이벤트 리스너 추가
 document.querySelector('select[style="padding-left: 10px;"]').addEventListener("change", function () {
-  const sortOrder = this.value; // 1은 오름차순, 2는 내림차순
-  const ul = document.querySelector(".designer-list ul");
-  const items = Array.from(ul.children);
+const sortOrder = this.value; // 1은 오름차순, 2는 내림차순
+const ul = document.querySelector(".designer-list ul");
+const items = Array.from(ul.children);
 
-  // 정렬 실행
-  items.sort(function (a, b) {
-    const nameA = a.querySelector("span").innerText.toLowerCase(); // 첫 번째 span (한글 이름)
-    const nameB = b.querySelector("span").innerText.toLowerCase();
-    if (sortOrder === "1") {
-      return nameA > nameB ? 1 : -1; // 오름차순
-    } else {
-      return nameA < nameB ? 1 : -1; // 내림차순
-    }
-  });
+// 정렬 실행
+items.sort(function (a, b) {
+const nameA = a.querySelector("span").innerText.toLowerCase(); // 첫 번째 span (한글 이름)
+const nameB = b.querySelector("span").innerText.toLowerCase();
+if (sortOrder === "1") {
+return nameA > nameB ? 1 : -1; // 오름차순
+} else {
+return nameA < nameB ? 1 : -1; // 내림차순
+}
+});
 
-  // 정렬된 순서로 ul에 다시 추가
-  items.forEach((item) => ul.appendChild(item));
+// 정렬된 순서로 ul에 다시 추가
+items.forEach((item) => ul.appendChild(item));
 });
 
 
@@ -142,20 +142,20 @@ document.querySelector('select[style="padding-left: 10px;"]').addEventListener("
 
 // 실시간 검색 기능
 document.querySelector(".list-filter-search input").addEventListener("input", function () {
-  const searchInput = this.value.toLowerCase(); // 검색창에 입력된 텍스트 (소문자로 변환)
-  const items = document.querySelectorAll(".designer-list ul li"); // 모든 디자이너 항목
+const searchInput = this.value.toLowerCase(); // 검색창에 입력된 텍스트 (소문자로 변환)
+const items = document.querySelectorAll(".designer-list ul li"); // 모든 디자이너 항목
 
-  items.forEach((item) => {
-    const name = item.querySelector("p span:first-child").innerText.toLowerCase(); // 한글 이름
-    const englishName = item.querySelector("p span:last-child").innerText.toLowerCase(); // 영문 이름
+items.forEach((item) => {
+const name = item.querySelector("p span:first-child").innerText.toLowerCase(); // 한글 이름
+const englishName = item.querySelector("p span:last-child").innerText.toLowerCase(); // 영문 이름
 
-    // 입력된 텍스트가 이름이나 영문 이름에 포함되었는지 여부 확인
-    if (name.includes(searchInput) || englishName.includes(searchInput)) {
-      item.style.display = "block"; // 관련 결과는 보이기
-    } else {
-      item.style.display = "none"; // 나머지는 숨기기
-    }
-  });
+// 입력된 텍스트가 이름이나 영문 이름에 포함되었는지 여부 확인
+if (name.includes(searchInput) || englishName.includes(searchInput)) {
+item.style.display = "block"; // 관련 결과는 보이기
+} else {
+item.style.display = "none"; // 나머지는 숨기기
+}
+});
 });
 
 
@@ -163,32 +163,7 @@ document.querySelector(".list-filter-search input").addEventListener("input", fu
 
 // 검색 입력 필드가 비는 경우 모든 항목 표시
 if (name.includes(searchInput) || englishName.includes(searchInput)) {
-  item.style.display = "block"; // 모든 항목 표시
+item.style.display = "block"; // 모든 항목 표시
 } else {
-  item.style.display = "none"; // 숨기기
-}
-
-
-
-
-
-// border-right 동적으로 업데이트하는 함수
-function updateBorders() {
-  const items = Array.from(document.querySelectorAll(".designer-list ul li")); // li 요소 배열로 가져오기
-  let visibleIndex = 0; // 현재 화면에 보이는 요소의 순서를 추적
-
-  items.forEach((item) => {
-    // 초기화: 모든 요소의 border-right를 기본값으로 설정
-    item.style.borderRight = "1px solid #f25100";
-
-    // 보이는 요소만 스타일링
-    if (item.style.display !== "none") {
-      if ((visibleIndex + 1) % 4 === 0) {
-        item.style.borderRight = "none"; // 현재 보이는 4번째 요소의 테두리 제거
-      }
-      visibleIndex++; // 보이는 항목의 순서를 증가
-    }
-  });
-}
-  });
+item.style.display = "none"; // 숨기기
 }
