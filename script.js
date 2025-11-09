@@ -101,19 +101,32 @@ document.addEventListener("DOMContentLoaded", function () {
 document.addEventListener("DOMContentLoaded", function () {
   // DOM 요소 가져오기
   const filterSelect = document.getElementById("filterSelect");
-  const designers = document.querySelectorAll(".designer-list li"); // 모든 <li>
+  const designerListContainer = document.querySelector(".designer-list");
+
+  // 기존의 디자이너 리스트(`li`) 가져오기
+  const allDesignerItems = Array.from(document.querySelectorAll(".designer-list li"));
 
   // select 태그 변경 이벤트 핸들링
   filterSelect.addEventListener("change", function () {
     const selectedMajor = filterSelect.value;
 
-    // 각 <li>를 확인하며 필터링
-    designers.forEach((designer) => {
-      if (selectedMajor === "all" || designer.dataset.major === selectedMajor) {
-        designer.classList.remove("hidden"); // 보여주기
-      } else {
-        designer.classList.add("hidden"); // 숨기기
+    // 기존 리스트 초기화 (기존에 생성된 <ul>을 제거)
+    const existingUl = designerListContainer.querySelector("ul");
+    if (existingUl) {
+      designerListContainer.removeChild(existingUl);
+    }
+
+    // 새로운 <ul> 구성
+    const newUl = document.createElement("ul");
+    allDesignerItems.forEach((item) => {
+      // 만약 선택된 전공과 일치하거나 전체(all)일 경우에만 추가
+      if (selectedMajor === "all" || item.dataset.major === selectedMajor) {
+        // 해당 <li>를 새로운 <ul>에 추가
+        newUl.appendChild(item.cloneNode(true)); // 기존 요소를 복제
       }
     });
+
+    // 새로운 <ul>을 리스트 컨테이너에 추가
+    designerListContainer.appendChild(newUl);
   });
 });
