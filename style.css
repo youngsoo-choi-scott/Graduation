@@ -507,7 +507,7 @@ body a {
   list-style: none;
   display: flex;
   flex-wrap: wrap;
-  gap: 2%;
+  gap: 0 20px;
 }
 
 .project-list ul li {
