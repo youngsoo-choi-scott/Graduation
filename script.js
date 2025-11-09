@@ -172,3 +172,62 @@ document.querySelector(".list-filter-search input").addEventListener("input", fu
 
   updateBorders(); // 검색 후 테두리 업데이트
 });
+
+
+
+
+
+// 필터 이벤트 리스너 (카테고리별 필터링)
+document.getElementById("category").addEventListener("change", function () {
+  const selectedCategory = this.value;
+  const items = document.querySelectorAll(".project-list ul li");
+
+  items.forEach((item) => {
+    if (selectedCategory === "all" || item.classList.contains(selectedCategory)) {
+      item.classList.remove("hidden"); // 해당 카테고리는 보임
+    } else {
+      item.classList.add("hidden"); // 해당 카테고리는 숨김
+    }
+  });
+
+  updateBorders(); // 필터링 후 테두리 업데이트
+});
+
+// 정렬 이벤트 리스너
+document.querySelector('select[style="padding-left: 10px;"]').addEventListener("change", function () {
+  const sortOrder = this.value; // 1은 오름차순, 2는 내림차순
+  const ul = document.querySelector(".project-list ul");
+  const items = Array.from(ul.children);
+
+  // 이름 순서로 정렬
+  items.sort(function (a, b) {
+    const nameA = a.querySelector("span").innerText.toLowerCase();
+    const nameB = b.querySelector("span").innerText.toLowerCase();
+    return sortOrder === "1" ? nameA.localeCompare(nameB) : nameB.localeCompare(nameA);
+  });
+
+  // 정렬된 순서를 DOM에 다시 추가
+  items.forEach((item) => ul.appendChild(item));
+
+  updateBorders(); // 정렬 후 테두리 업데이트
+});
+
+// 실시간 검색 기능
+document.querySelector(".list-filter-search input").addEventListener("input", function () {
+  const searchInput = this.value.toLowerCase(); // 검색창에 입력된 텍스트
+  const items = document.querySelectorAll(".project-list ul li");
+
+  items.forEach((item) => {
+    const name = item.querySelector("p span:first-child").innerText.toLowerCase(); // 한글 이름
+    const englishName = item.querySelector("p span:last-child").innerText.toLowerCase(); // 영문 이름
+
+    // 검색 키워드와 일치하는 항목만 표시
+    if (name.includes(searchInput) || englishName.includes(searchInput)) {
+      item.style.display = "block"; // 관련 결과 보여줌
+    } else {
+      item.style.display = "none"; // 관련 없는 항목 숨김
+    }
+  });
+
+  updateBorders(); // 검색 후 테두리 업데이트
+});
