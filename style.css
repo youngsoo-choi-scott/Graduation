@@ -493,7 +493,7 @@ body a {
 
 .project-list {
   display: block;
-  margin-top: 20px;
+  margin-top: 48px;
   margin-bottom: 100px;
 }
 
@@ -506,24 +506,17 @@ body a {
   margin: 0;
   list-style: none;
   display: flex;
-  flex-wrap: wrap;
+  gap: 20px;
 }
 
 .project-list ul li {
   width: 25%;
   height: auto;
   box-sizing: border-box;
-  border-right: 1px solid #f25100;
-  border-bottom: 1px solid #f25100;
-}
-
-.project-list ul li:nth-child(4n) {
-  border-right: 0;
 }
 
 .project-list ul li a {
   display: block;
-  padding: 0 20px 20px 20px;
 }
 
 .project-list ul li a img {
