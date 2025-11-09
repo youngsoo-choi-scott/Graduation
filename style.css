@@ -404,6 +404,7 @@ body a {
   background: white url('images/select_arrow.svg') no-repeat right 10px center;
   background-size: 24px;
   outline: none;
+  cursor: pointer;
 }
 
 .list-filter-search {
