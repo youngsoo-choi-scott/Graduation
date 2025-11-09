@@ -539,3 +539,7 @@ body a {
 .project-list ul li a span {
   display: block;
 }
+
+.project-list ul li a span.b {
+  font-weight: 600;
+}
