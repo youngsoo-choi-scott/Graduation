@@ -172,77 +172,21 @@ if (name.includes(searchInput) || englishName.includes(searchInput)) {
 
 
 
-// border-right 업데이트 함수
+// border-right 동적으로 업데이트하는 함수
 function updateBorders() {
   const items = Array.from(document.querySelectorAll(".designer-list ul li")); // 모든 li 요소를 배열로 가져옴
-  let visibleIndex = 0; // 화면상에서 보이는 요소의 순서
-  
-  // 모든 요소를 순회하며 보이는 요소에 대해서만 처리
+  let visibleIndex = 0; // 현재 화면에서 보이는 요소 순서 확인
+
   items.forEach((item) => {
+    // 초기화: 모든 요소의 border-right를 기본값으로 설정
+    item.style.borderRight = "1px solid #f25100";
+
+    // 보이는 요소만 카운트
     if (item.style.display !== "none") {
-      item.style.borderRight = "1px solid #f25100"; // 초기화
       if ((visibleIndex + 1) % 4 === 0) {
-        item.style.borderRight = "none"; // 네 번째 항목에서만 테두리 제거
+        item.style.borderRight = "none"; // 4번째 요소의 오른쪽 border 제거
       }
-      visibleIndex++; // 보여지는 요소만 카운트
-    } else {
-      item.style.borderRight = ""; // 숨겨진 항목의 스타일을 초기화
+      visibleIndex++; // visible 요소 순서 증가
     }
   });
 }
-
-// 필터링 이벤트 리스너
-document.querySelector("#category").addEventListener("change", function () {
-  const selectedCategory = this.value; // 선택된 카테고리 값
-  const items = document.querySelectorAll(".designer-list ul li");
-
-  items.forEach((item) => {
-    if (selectedCategory === "all" || item.classList.contains(selectedCategory)) {
-      item.style.display = "block"; // 관련 요소 보이기
-    } else {
-      item.style.display = "none"; // 숨기기
-    }
-  });
-
-  updateBorders(); // 필터링 이후 border 업데이트
-});
-
-// 정렬 이벤트 리스너
-document.querySelector('select[style="padding-left: 10px;"]').addEventListener("change", function () {
-  const sortOrder = this.value;
-  const ul = document.querySelector(".designer-list ul");
-  const items = Array.from(ul.children);
-
-  // 오름차순/내림차순 정렬
-  items.sort(function (a, b) {
-    const nameA = a.querySelector("p span:first-child").innerText.toLowerCase();
-    const nameB = b.querySelector("p span:first-child").innerText.toLowerCase();
-    return sortOrder === "1" ? nameA.localeCompare(nameB) : nameB.localeCompare(nameA);
-  });
-
-  items.forEach((item) => ul.appendChild(item)); // 정렬된 요소 새로 그리기
-
-  updateBorders(); // 정렬 이후 border 업데이트
-});
-
-// 실시간 검색 이벤트 리스너
-document.querySelector(".list-filter-search input").addEventListener("input", function () {
-  const searchInput = this.value.toLowerCase();
-  const items = document.querySelectorAll(".designer-list ul li");
-
-  items.forEach((item) => {
-    const name = item.querySelector("p span:first-child").innerText.toLowerCase();
-    const englishName = item.querySelector("p span:last-child").innerText.toLowerCase();
-    
-    if (name.includes(searchInput) || englishName.includes(searchInput)) {
-      item.style.display = "block"; // 검색어와 일치하는 항목 보이기
-    } else {
-      item.style.display = "none"; // 검색어와 일치하지 않는 항목 숨기기
-    }
-  });
-
-  updateBorders(); // 검색 필터링 이후 border 업데이트
-});
-
-// 페이지 로드 시 초기 호출
-document.addEventListener("DOMContentLoaded", updateBorders);
