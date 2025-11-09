@@ -436,3 +436,19 @@ body a {
   width: 44px;
   height: 24px;
 }
+
+.designer-list {
+  display: block;
+}
+
+.designer-list ul{
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  border-bottom: 1px solid #f25100;
+  display: flex;
+}
+
+.designer-list ul li{
+  width: 25%;
+}
