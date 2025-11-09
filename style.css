@@ -435,6 +435,7 @@ body a {
   background: white url('images/select_search.svg') no-repeat right 10px center;
   width: 44px;
   height: 24px;
+  cursor: pointer;
 }
 
 .designer-list {
