@@ -111,3 +111,28 @@ document.getElementById("category").addEventListener("change", function() {
     }
   });
 });
+
+
+
+
+
+// 정렬 이벤트 리스너 추가
+document.querySelector('select[style="padding-left: 10px;"]').addEventListener("change", function () {
+  const sortOrder = this.value; // 1은 오름차순, 2는 내림차순
+  const ul = document.querySelector(".designer-list ul");
+  const items = Array.from(ul.children);
+
+  // 정렬 실행
+  items.sort(function (a, b) {
+    const nameA = a.querySelector("span").innerText.toLowerCase(); // 첫 번째 span (한글 이름)
+    const nameB = b.querySelector("span").innerText.toLowerCase();
+    if (sortOrder === "1") {
+      return nameA > nameB ? 1 : -1; // 오름차순
+    } else {
+      return nameA < nameB ? 1 : -1; // 내림차순
+    }
+  });
+
+  // 정렬된 순서로 ul에 다시 추가
+  items.forEach((item) => ul.appendChild(item));
+});
