@@ -461,6 +461,10 @@ body a {
   border: 0;
 }
 
+.designer-list ul li a img {
+  width: 100%;
+}
+
 .designer-list ul li a p {
   color: #1a1a1a;
   text-decoration: none;
