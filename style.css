@@ -401,7 +401,7 @@ body a {
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
-  background: white url('images/select_arrow.svg') no-repeat right center;
+  background: white url('images/select_arrow.svg') no-repeat right 10px center;
   background-size: 24px;
 }
 
