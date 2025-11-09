@@ -506,11 +506,12 @@ body a {
   margin: 0;
   list-style: none;
   display: flex;
-  gap: 20px;
+  flex-wrap: wrap;
+  gap: 2%;
 }
 
 .project-list ul li {
-  width: 25%;
+  width: 23%;
   height: auto;
   box-sizing: border-box;
 }
