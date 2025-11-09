@@ -174,19 +174,21 @@ if (name.includes(searchInput) || englishName.includes(searchInput)) {
 
 // border-right 동적으로 업데이트하는 함수
 function updateBorders() {
-  const items = Array.from(document.querySelectorAll(".designer-list ul li")); // 모든 li 요소를 배열로 가져옴
-  let visibleIndex = 0; // 현재 화면에서 보이는 요소 순서 확인
+  const items = Array.from(document.querySelectorAll(".designer-list ul li")); // li 요소 배열로 가져오기
+  let visibleIndex = 0; // 현재 화면에 보이는 요소의 순서를 추적
 
   items.forEach((item) => {
     // 초기화: 모든 요소의 border-right를 기본값으로 설정
     item.style.borderRight = "1px solid #f25100";
 
-    // 보이는 요소만 카운트
+    // 보이는 요소만 스타일링
     if (item.style.display !== "none") {
       if ((visibleIndex + 1) % 4 === 0) {
-        item.style.borderRight = "none"; // 4번째 요소의 오른쪽 border 제거
+        item.style.borderRight = "none"; // 현재 보이는 4번째 요소의 테두리 제거
       }
-      visibleIndex++; // visible 요소 순서 증가
+      visibleIndex++; // 보이는 항목의 순서를 증가
     }
+  });
+}
   });
 }
