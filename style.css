@@ -415,6 +415,7 @@ body a {
 .list-filter-search input {
   width: 100%;
   border: 0;
+  color: #f25100;
   font-family: Pretendard, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
   font-size: 16px;
   font-weight: 400;
