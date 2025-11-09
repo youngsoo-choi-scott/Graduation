@@ -453,6 +453,7 @@ body a {
   width: 25%;
   height: auto;
   border-right: 1px solid #f25100;
+  padding: 0 20px 20px 20px;
 }
 
 .designer-list ul li a p{
@@ -462,6 +463,7 @@ body a {
   font-weight: 400;
   line-height: 1.5;
   letter-spacing: -0.025em;
+  margin: 10px 0 0 0;
 }
 
 .designer-list ul li a span{
