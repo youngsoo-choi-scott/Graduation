@@ -94,3 +94,20 @@ document.addEventListener("DOMContentLoaded", function () {
     createSquares();
   });
 });
+
+
+
+
+
+document.getElementById("category").addEventListener("change", function() {
+  const selectedCategory = this.value;
+  const items = document.querySelectorAll(".designer-list ul li");
+
+  items.forEach((item) => {
+    if (selectedCategory === "all" || item.classList.contains(selectedCategory)) {
+      item.classList.remove("hidden");  // 보이기
+    } else {
+      item.classList.add("hidden");    // 숨기기
+    }
+  });
+});
