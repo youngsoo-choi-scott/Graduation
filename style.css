@@ -487,6 +487,10 @@ body a {
   margin: 10px 0 0 0;
 }
 
+.designer-list ul li a span {
+  display: block;
+}
+
 .project-list {
   display: block;
   margin-top: 20px;
