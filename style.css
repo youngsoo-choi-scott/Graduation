@@ -403,6 +403,7 @@ body a {
   -moz-appearance: none;
   background: white url('images/select_arrow.svg') no-repeat right 10px center;
   background-size: 24px;
+  outline: none;
 }
 
 .list-filter-search {
@@ -419,4 +420,9 @@ body a {
   line-height: 1.5;
   letter-spacing: -0.025em;
   padding: 10px;
+  outline: none;
+}
+
+.list-filter-search input::placeholder {
+  color: #f25100;
 }
