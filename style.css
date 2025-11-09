@@ -431,7 +431,7 @@ body a {
 .list-filter-search button {
   border: none;
   font-size: 0;
-  background: white url('images/select_search.svg') no-repeat right center;
-  width: 24px;
+  background: white url('images/select_search.svg') no-repeat right 10px center;
+  width: 44px;
   height: 24px;
 }
