@@ -413,7 +413,7 @@ body a {
 }
 
 .list-filter-search input {
-  width: auto;
+  width: 100%;
   border: 0;
   font-family: Pretendard, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
   font-size: 16px;
