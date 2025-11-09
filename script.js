@@ -101,32 +101,34 @@ document.addEventListener("DOMContentLoaded", function () {
 document.addEventListener("DOMContentLoaded", function () {
   // DOM 요소 가져오기
   const filterSelect = document.getElementById("filterSelect");
-  const designerListContainer = document.querySelector(".designer-list");
-
-  // 기존의 디자이너 리스트(`li`) 가져오기
-  const allDesignerItems = Array.from(document.querySelectorAll(".designer-list li"));
+  const allLists = document.querySelectorAll(".designer-list ul"); // 모든 ul
+  const allDesignerItems = document.querySelectorAll(".designer-list li"); // 모든 li
 
   // select 태그 변경 이벤트 핸들링
   filterSelect.addEventListener("change", function () {
     const selectedMajor = filterSelect.value;
 
-    // 기존 리스트 초기화 (기존에 생성된 <ul>을 제거)
-    const existingUl = designerListContainer.querySelector("ul");
-    if (existingUl) {
-      designerListContainer.removeChild(existingUl);
-    }
+    // 모든 ul을 순회하며 각 ul 내부의 li를 필터링
+    allLists.forEach((list) => {
+      const listItems = list.querySelectorAll("li"); // 해당 ul의 모든 li 가져오기
 
-    // 새로운 <ul> 구성
-    const newUl = document.createElement("ul");
-    allDesignerItems.forEach((item) => {
-      // 만약 선택된 전공과 일치하거나 전체(all)일 경우에만 추가
-      if (selectedMajor === "all" || item.dataset.major === selectedMajor) {
-        // 해당 <li>를 새로운 <ul>에 추가
-        newUl.appendChild(item.cloneNode(true)); // 기존 요소를 복제
+      // 각 li를 확인하며 조건에 따라 표시/숨김 처리
+      let hasVisibleItems = false; // 해당 ul이 비어 있는지 여부 확인
+      listItems.forEach((item) => {
+        if (selectedMajor === "all" || item.dataset.major === selectedMajor) {
+          item.style.display = ""; // 보여주기
+          hasVisibleItems = true; // 하나라도 표시되면 true
+        } else {
+          item.style.display = "none"; // 숨기기
+        }
+      });
+
+      // ul 전체를 숨길지 결정
+      if (hasVisibleItems) {
+        list.style.display = ""; // ul을 보여줌
+      } else {
+        list.style.display = "none"; // ul 자체를 숨김
       }
     });
-
-    // 새로운 <ul>을 리스트 컨테이너에 추가
-    designerListContainer.appendChild(newUl);
   });
 });
