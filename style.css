@@ -386,6 +386,7 @@ body a {
   height: 44px;
   display: flex;
   flex-direction: row;
+  border-bottom: 1px solid #f25100;
 }
 
 .list-filter select {
