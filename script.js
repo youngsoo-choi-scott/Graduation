@@ -167,3 +167,36 @@ if (name.includes(searchInput) || englishName.includes(searchInput)) {
 } else {
   item.style.display = "none"; // 숨기기
 }
+
+
+
+
+
+function updateBorders() {
+  const items = document.querySelectorAll(".designer-list ul li");
+  items.forEach((item, index) => {
+    item.style.borderRight = "1px solid #f25100"; // 기본 오른쪽 테두리 설정
+    if ((index + 1) % 4 === 0) {
+      item.style.borderRight = "none"; // 4번째 요소마다 테두리 제거
+    }
+  });
+}
+
+// 필터링이나 정렬 이벤트 발생 후 실행
+document.querySelector("#category").addEventListener("change", () => {
+  // (필터링 로직 수행 후)
+  updateBorders();
+});
+
+document.querySelector('select[style="padding-left: 10px;"]').addEventListener("change", () => {
+  // (정렬 로직 수행 후)
+  updateBorders();
+});
+
+document.querySelector(".list-filter-search input").addEventListener("input", () => {
+  // (검색 필터 수행 후)
+  updateBorders();
+});
+
+// 초기 호출 (초기 로드 시 한 번 호출)
+document.addEventListener("DOMContentLoaded", updateBorders);
