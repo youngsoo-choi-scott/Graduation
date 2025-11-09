@@ -439,6 +439,7 @@ body a {
 
 .designer-list {
   display: block;
+  margin-top: 20px;
 }
 
 .designer-list ul {
