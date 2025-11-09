@@ -443,6 +443,10 @@ body a {
   margin-bottom: 100px;
 }
 
+.hidden {
+  display: none;
+}
+
 .designer-list ul {
   padding: 0;
   margin: 0;
