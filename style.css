@@ -457,7 +457,7 @@ body a {
   padding: 0 20px 20px 20px;
 }
 
-.designer-list ul li:last-child {
+.designer-list ul > :nth-child(4) {
   border: 0;
 }
 
