@@ -453,15 +453,17 @@ body a {
   list-style: none;
   border-bottom: 1px solid #f25100;
   display: flex;
+  flex-wrap: wrap;
 }
 
 .designer-list ul li {
   width: 25%;
   height: auto;
+  box-sizing: border-box;
   border-right: 1px solid #f25100;
 }
 
-.designer-list ul > :nth-child(4) {
+.designer-list ul li:nth-child(4n) {
   border: 0;
 }
 
