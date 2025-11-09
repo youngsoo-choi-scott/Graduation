@@ -511,7 +511,7 @@ body a {
 }
 
 .project-list ul li {
-  width: 23%;
+  width: calc(25% - 15px);
   height: auto;
   box-sizing: border-box;
 }
