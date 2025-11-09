@@ -380,3 +380,17 @@ body a {
   padding: 8px 0;
   margin: 0;
 }
+
+.list-filter {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.list-filter select {
+  width: 25%;
+}
+
+.list-filter-search {
+  width: 50%;
+}
