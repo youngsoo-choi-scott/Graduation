@@ -236,7 +236,8 @@ document.querySelector(".list-filter-search input").addEventListener("input", fu
 
 
 
-// 페이지가 로드되면 'loaded' 클래스 추가
-window.addEventListener("load", function() {
-    document.body.classList.add("loaded");
-});
+// 페이지가 로드되면 body에 'loaded' 클래스 추가
+        window.addEventListener("load", function() {
+            console.log("페이지 로드 완료!");
+            document.body.classList.add("loaded");
+        });
