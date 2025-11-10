@@ -236,8 +236,18 @@ document.querySelector(".list-filter-search input").addEventListener("input", fu
 
 
 
-// 페이지가 로드되면 body에 'loaded' 클래스 추가
-        window.addEventListener("load", function() {
-            console.log("페이지 로드 완료!");
-            document.body.classList.add("loaded");
-        });
+
+$(document).ready(function() {
+    /* 1 */
+    $(window).scroll( function(){
+        /* 2 */
+        $('.fadein').each( function(i){
+            var bottom_of_object = $(this).offset().top + $(this).outerHeight();
+            var bottom_of_window = $(window).scrollTop() + $(window).height();
+            /* 3 */
+            if( bottom_of_window > bottom_of_object/2 ){
+                $(this).animate({'opacity':'1'},500);
+            }
+        }); 
+    });
+});
