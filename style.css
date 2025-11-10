@@ -258,8 +258,18 @@ body a {
   pointer-events: none;
 }
 
-.fadein {
+.fade-in {
+  opacity: 0; /* 처음에는 투명하게 */
+  animation: fadeIn 2s ease-in forwards;
+}
+
+@keyframes fadeIn {
+  from {
     opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 
