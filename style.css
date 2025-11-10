@@ -264,7 +264,7 @@ body a {
     transition: opacity 1.5s ease-out, transform 1.5s ease-out; /* 전환 효과 */
 }
 
-.loaded .fade-in {
+body.loaded .fade-in {
     opacity: 1; /* 완전히 보이게 설정 */
     transform: translateY(0); /* 원래 위치로 이동 */
 }
