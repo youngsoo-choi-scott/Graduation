@@ -231,3 +231,31 @@ document.querySelector(".list-filter-search input").addEventListener("input", fu
 
   updateBorders(); // 검색 후 테두리 업데이트
 });
+
+
+
+
+
+// 옵저버 옵션 설정
+	const options = {
+	  threshold: 0.1  // 요소가 10% 이상 보일 때 콜백 실행
+	};
+	
+	// 콜백 함수
+	const callback = (entries, observer) => {
+	  entries.forEach(entry => {
+	    if(entry.isIntersecting) {
+	      entry.target.classList.add('visible');
+	      // 한 번 나타난 뒤 관찰 해제 (필요시)
+	      observer.unobserve(entry.target);
+	    }
+	  });
+	};
+	
+	// 옵저버 생성
+	const observer = new IntersectionObserver(callback, options);
+	
+	// 관찰할 요소 선택 및 등록
+	document.querySelectorAll('.content').forEach(el => {
+	  observer.observe(el);
+	});
