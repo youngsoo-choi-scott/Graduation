@@ -177,6 +177,25 @@ document.querySelector(".list-filter-search input").addEventListener("input", fu
 
 
 
+// border-right를 동적으로 설정하는 함수
+function updateBorders() {
+  const items = Array.from(document.querySelectorAll('.projet-list ul li')).filter(
+    (item) => !item.classList.contains('hidden') && item.style.display !== 'none'
+  );
+
+  // 모든 요소의 border-right를 초기화
+  items.forEach((item) => {
+    item.style.borderRight = '1px solid #f25100'; // 초기 테두리 설정
+  });
+
+  // 보이는 요소 기준으로 4번째마다 테두리 제거
+  items.forEach((item, index) => {
+    if ((index + 1) % 4 === 0) {
+      item.style.borderRight = 'none'; // 4번째 요소 테두리 제거
+    }
+  });
+}
+
 // 필터 이벤트 리스너 (카테고리별 필터링)
 document.getElementById("category").addEventListener("change", function () {
   const selectedCategory = this.value;
@@ -230,24 +249,4 @@ document.querySelector(".list-filter-search input").addEventListener("input", fu
   });
 
   updateBorders(); // 검색 후 테두리 업데이트
-});
-
-
-
-
-
-
-$(document).ready(function() {
-    /* 1 */
-    $(window).scroll( function(){
-        /* 2 */
-        $('.fadein').each( function(i){
-            var bottom_of_object = $(this).offset().top + $(this).outerHeight();
-            var bottom_of_window = $(window).scrollTop() + $(window).height();
-            /* 3 */
-            if( bottom_of_window > bottom_of_object/2 ){
-                $(this).animate({'opacity':'1'},500);
-            }
-        }); 
-    });
 });
