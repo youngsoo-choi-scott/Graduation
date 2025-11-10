@@ -259,8 +259,8 @@ body a {
 }
 
 .fade-in {
-  opacity: 0; /* 처음에는 투명하게 */
-  animation: fadeIn 2s ease-in forwards;
+  opacity: 0;
+  animation: fadeIn 1s ease-out forwards;
 }
 
 @keyframes fadeIn {
