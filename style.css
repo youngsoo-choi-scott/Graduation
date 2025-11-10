@@ -259,14 +259,7 @@ body a {
 }
 
 .fade-in {
-    opacity: 0; /* 처음엔 보이지 않음 */
-    transform: translateY(20px); /* 약간 아래로 이동된 상태 */
-    transition: opacity 1.5s ease-out, transform 1.5s ease-out; /* 전환 효과 */
-}
-
-body.loaded .fade-in {
-    opacity: 1; /* 완전히 보이게 설정 */
-    transform: translateY(0); /* 원래 위치로 이동 */
+    opacity: 0;
 }
 
 
