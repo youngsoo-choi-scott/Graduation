@@ -563,6 +563,9 @@ body.loaded .fade-in {
 
 .project-list ul li a span.b {
   font-weight: 600;
+  white-space: nowrap; 
+  overflow: hidden; 
+  text-overflow: ellipsis; 
 }
 
 
