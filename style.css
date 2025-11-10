@@ -258,6 +258,17 @@ body a {
   pointer-events: none;
 }
 
+.content {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1.5s ease-out, transform 1.5s ease-out;
+}
+
+.content.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 
 
 
