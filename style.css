@@ -48,6 +48,12 @@ body a {
   box-sizing: border-box;
 }
 
+@media (max-width: 600px) {
+  .main-container {
+    grid-template-columns: 100%;
+  }
+}
+
 .left {
   display: flex;
   flex-direction: column;
@@ -58,6 +64,12 @@ body a {
   box-sizing: border-box;
   height: 100%;
   border-right: 1px solid #f25100;
+}
+
+@media (max-width: 600px) {
+  .left {
+    display: none;
+  }
 }
 
 .left h1 {
