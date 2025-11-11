@@ -622,6 +622,9 @@ body a {
   border: 1px solid #f25100;
   padding: 6px 10px;
   text-align: center;
+  margin-bottom: 20px;
+  width: auto;
+  height: 100%;
 }
 
 .right-top-project {
