@@ -589,3 +589,38 @@ body a {
   width: 30%; 
   height: auto;
 }
+
+
+
+
+
+
+
+
+/* 프로젝트 상세 페이지 */
+.right-top-project {
+  font-size: 18px;
+  line-height: 1.5;
+  color: #1a1a1a;
+  font-weight: 400;
+  width: 100%;
+  display: block;
+}
+
+.right-top-project p{
+  margin-top: 20px;
+}
+
+.right-top-project p.bold{
+  font-weight: 600;
+}
+
+.right-top-project p.mt10{
+  margin-top: 10px;
+}
+
+.right-top-project p a{
+  font-weight: 600;
+  color: #1a1a1a;
+  text-decoration: underline;
+}
