@@ -252,6 +252,10 @@ document.querySelector(".list-filter-search input").addEventListener("input", fu
     } else {
       item.style.display = "none"; // 관련 없는 항목 숨김
     }
+  });
+
+  updateBorders(); // 검색 후 테두리 업데이트
+});
 
 
 
@@ -260,14 +264,10 @@ document.querySelector(".list-filter-search input").addEventListener("input", fu
 
 
 
-    // menu-toggle 클릭 시 nav-links 활성화/비활성화
+// menu-toggle 클릭 시 nav-links 활성화/비활성화
 const menuToggle = document.getElementById("menu-toggle");
 const navLinks = document.querySelector(".nav-links");
 
 menuToggle.addEventListener("click", () => {
   navLinks.classList.toggle("active");
-});
-  });
-
-  updateBorders(); // 검색 후 테두리 업데이트
 });
