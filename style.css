@@ -345,6 +345,10 @@ body a {
   margin-bottom: 120px;
 }
 
+.mb20 {
+  margin-bottom: 20px;
+}
+
 .about-poster {
   width: 100%;
   height: auto;
