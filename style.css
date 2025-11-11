@@ -634,6 +634,7 @@ body a {
   font-weight: 400;
   width: 100%;
   display: block;
+  letter-spacing: -0.025em;
 }
 
 .right-top-project p{
