@@ -715,7 +715,7 @@ body a {
 
 .nav-links.active {
   opacity: 1;
-  max-height: 500px; /* 적절한 높이로 설정 */
+  max-height: 100vh; /* 적절한 높이로 설정 */
 }
 
 .nav-links a {
