@@ -729,3 +729,21 @@ body a {
     display: flex;
   }
 }
+
+
+
+
+
+
+
+
+/* 모바일 About */
+@media (max-width: 600px) {
+  .right-top-text {
+    flex-direction: column;
+    gap: 0;
+  }
+  .right-top-text p {
+    width: 100%;
+  }
+}
