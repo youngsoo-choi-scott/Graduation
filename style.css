@@ -682,7 +682,7 @@ body a {
 
 /* 모바일 메뉴 */
 .navbar {
-  display: none;
+  display: none; /* 기본 숨김 */
   flex-direction: column;
   align-items: center;
   background-color: #8ce2ff;
@@ -701,18 +701,21 @@ body a {
   width: 25px;
   margin: 3px;
   background-color: white;
-  transition: all 0.3s;
+  transition: all 0.3s ease;
 }
 
 .nav-links {
   list-style: none;
   text-align: center;
-  display: none;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden; /* 메뉴 숨김 처리 */
+  transition: opacity 0.3s ease, max-height 0.5s ease;
 }
 
 .nav-links.active {
-  display: flex;
-  flex-direction: column;
+  opacity: 1;
+  max-height: 500px; /* 적절한 높이로 설정 */
 }
 
 .nav-links a {
