@@ -102,36 +102,29 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-// border-right를 동적으로 설정하는 함수
+// border-right 스타일을 동적으로 설정하는 최적화된 함수
 function updateBorders() {
-  // 모든 `.designer-list ul li` 요소를 가져옵니다.
   const items = Array.from(document.querySelectorAll('.designer-list ul li')).filter(
-    (item) => !item.classList.contains('hidden') && item.style.display !== 'none' // 보이는 요소만 선택
+    (item) => !item.classList.contains('hidden') && item.style.display !== 'none'
   );
 
-  // 현재 화면 너비를 확인
-  const isMobile = window.innerWidth <= 600; // 600px 이하 여부 판단
+  // 모바일 여부에 따른 칸 수 (columns)
+  const isMobile = window.innerWidth <= 600; // 모바일 크기 확인
+  const columns = isMobile ? 2 : 4; // 모바일(2칸), 데스크탑(4칸)
 
-  // 모든 요소의 border-right를 초기화
-  items.forEach((item) => {
-    item.style.borderRight = '1px solid #f25100'; // 초기 테두리 설정
-  });
-
-  // 반응형 조건에 따라 테두리를 제거
   items.forEach((item, index) => {
-    if (isMobile) {
-      // 모바일 환경 (600px 이하): 2번째마다 테두리 제거
-      if ((index + 1) % 2 === 0) {
-        item.style.borderRight = 'none';
-      }
-    } else {
-      // 데스크탑 환경: 4번째 요소마다 테두리 제거
-      if ((index + 1) % 4 === 0) {
-        item.style.borderRight = 'none';
-      }
-    }
+    item.style.borderRight = (index + 1) % columns === 0 ? 'none' : '1px solid #f25100';
   });
 }
+
+// 필터, 정렬, 검색 이벤트 트리거 후에 호출하도록 연결
+window.addEventListener('resize', updateBorders);
+document.getElementById('category').addEventListener('change', updateBorders);
+document.querySelector('.list-filter-search button').addEventListener('click', updateBorders);
+updateBorders(); // 초기 실행
+
+
+
 
 // 페이지 로드 시 업데이트 실행
 updateBorders();
