@@ -264,10 +264,11 @@ document.querySelector(".list-filter-search input").addEventListener("input", fu
 
 
 
-// menu-toggle 클릭 시 nav-links 활성화/비활성화
+// JavaScript Code
 const menuToggle = document.getElementById("menu-toggle");
 const navLinks = document.querySelector(".nav-links");
 
 menuToggle.addEventListener("click", () => {
   navLinks.classList.toggle("active");
+  console.log(navLinks.classList); // 디버깅: 클래스 토글 확인
 });
