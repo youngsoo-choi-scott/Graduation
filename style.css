@@ -51,6 +51,7 @@ body a {
 @media (max-width: 600px) {
   .main-container {
     grid-template-columns: 100%;
+    grid-template-rows: max-content;
   }
 }
 
@@ -692,11 +693,12 @@ body a {
   z-index: 1000;
   font-family: Pretendard, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
   font-size: 32px;
-  line-height: 1.2;
+  line-height: 1.5;
   letter-spacing: -0.025em;
   font-weight: 600;
   padding: 20px;
   cursor: pointer;
+  align-items: center;
 }
 
 .overlay {
@@ -748,7 +750,7 @@ body a {
 
 @media (max-width: 600px) {
   .navbar {
-    display: block;
+    display: flex;
   }
 }
 
