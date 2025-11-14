@@ -682,7 +682,7 @@ body a {
 
 /* 모바일 메뉴 스타일 */
 .navbar {
-  display: flex;
+  display: none;
   flex-direction: column;
   align-items: center;
   background-color: #8ce2ff;
