@@ -737,6 +737,16 @@ body a {
   padding-left: 20px;
 }
 
+.overlay p {
+  width: 100%; 
+  color: #f25100; 
+}
+
+.overlay p span {
+  display: block; 
+  padding-left: 20px;
+}
+
 @media (max-width: 600px) {
   .navbar {
     display: block;
