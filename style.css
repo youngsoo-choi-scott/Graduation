@@ -702,28 +702,39 @@ body a {
 
 .overlay {
   display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
   width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.8); /* 반투명 배경 */
-  color: #ffffff;
+  height: 100vh;
+  background-color: #ffffff;
   z-index: 999;
-  justify-content: center;
   align-items: center;
   flex-direction: column;
 }
 
 .overlay ul {
-  text-align: center;
-  font-size: 18px;
+  font-size: 1.75em;
+  font-family: Pretendard, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
   line-height: 1.5;
   letter-spacing: -0.025em;
+  width: 100%;
+  font-weight: 400;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 .overlay li {
-  margin: 10px 0;
+  margin: 0;
+  border-bottom: 1px solid #f25100;
+  dislay: block; 
+  padding: 10px 0;
+}
+
+.overlay li a {
+  text-decoration: none; 
+  color: #f25100; 
+  padding-left: 20px;
 }
 
 @media (max-width: 600px) {
