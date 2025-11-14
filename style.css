@@ -726,7 +726,6 @@ body a {
 .overlay li {
   margin: 0;
   border-bottom: 1px solid #f25100;
-  dislay: block; 
   padding: 10px 0;
 }
 
@@ -734,6 +733,7 @@ body a {
   text-decoration: none; 
   color: #f25100; 
   padding-left: 20px;
+  display: block;
 }
 
 .overlay p {
