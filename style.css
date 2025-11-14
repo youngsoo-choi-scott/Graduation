@@ -746,4 +746,7 @@ body a {
   .right-top-text p {
     width: 100%;
   }
+  .right-top-table td {
+    width: 50% !important;
+  }
 }
