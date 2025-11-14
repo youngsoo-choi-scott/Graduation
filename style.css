@@ -680,13 +680,12 @@ body a {
 
 
 
-/* 모바일 메뉴 */
+/* 모바일 메뉴 스타일 */
 .navbar {
-  display: none; /* 기본 숨김 */
+  display: flex;
   flex-direction: column;
   align-items: center;
   background-color: #8ce2ff;
-  color: white;
   padding: 10px 0;
 }
 
@@ -701,21 +700,21 @@ body a {
   width: 25px;
   margin: 3px;
   background-color: white;
-  transition: all 0.3s ease;
+  transition: all 0.3s;
 }
 
 .nav-links {
   list-style: none;
   text-align: center;
-  opacity: 0;
-  max-height: 0;
-  overflow: hidden; /* 메뉴 숨김 처리 */
+  opacity: 0; /* 메뉴 숨김 */
+  max-height: 0; /* 메뉴 접힘 */
+  overflow: hidden;
   transition: opacity 0.3s ease, max-height 0.5s ease;
 }
 
 .nav-links.active {
-  opacity: 1;
-  max-height: 100vh; /* 적절한 높이로 설정 */
+  opacity: 1; /* 메뉴 보임 */
+  max-height: 100vh; /* 메뉴 펼침 */
 }
 
 .nav-links a {
@@ -729,7 +728,6 @@ body a {
     display: flex;
   }
 }
-
 
 
 
