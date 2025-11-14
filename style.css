@@ -690,13 +690,12 @@ body a {
   border-bottom: 1px solid #f25100;
   color: #f25100;
   z-index: 1000;
-  text-align: center;
   font-family: Pretendard, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
   font-size: 32px;
   line-height: 1.2;
   letter-spacing: -0.025em;
   font-weight: 600;
-  padding: 20px 0;
+  padding: 20px;
   cursor: pointer;
 }
 
