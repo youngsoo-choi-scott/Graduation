@@ -811,4 +811,7 @@ body a {
   .project-list ul li {
     width: calc(50% - 15px);
   }
+  .list-filter select {
+    background: none;
+  }
 }
