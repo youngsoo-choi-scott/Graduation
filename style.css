@@ -692,7 +692,7 @@ body a {
   z-index: 1000;
   text-align: center;
   font-family: Pretendard, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
-  font-size: 1.75em;
+  font-size: 32px;
   line-height: 1.2;
   letter-spacing: -0.025em;
   font-weight: 600;
@@ -711,7 +711,7 @@ body a {
 }
 
 .overlay ul {
-  font-size: 1.75em;
+  font-size: 32px;
   font-family: Pretendard, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
   line-height: 1.5;
   letter-spacing: -0.025em;
