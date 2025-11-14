@@ -791,6 +791,9 @@ body a {
   .designer-list ul li:nth-child(2n) {
     border-right: 0;
   }
+  .profile-symbol img {
+    width: 100%;
+  }
 }
 
 
