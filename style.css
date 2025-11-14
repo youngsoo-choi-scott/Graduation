@@ -772,3 +772,20 @@ body a {
     width: 50% !important;
   }
 }
+
+
+
+
+
+
+
+
+/* 모바일 Designer */
+@media (max-width: 600px) {
+  .designer-list ul li {
+    width: 50%;
+  }
+  .designer-list ul li:nth-child(2n) {
+    border-right: 0;
+  }
+}
