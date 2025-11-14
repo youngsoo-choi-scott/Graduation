@@ -789,3 +789,17 @@ body a {
     border-right: 0;
   }
 }
+
+
+
+
+
+
+
+
+/* 모바일 Project */
+@media (max-width: 600px) {
+  .project-list ul li {
+    width: calc(50% - 15px);
+  }
+}
