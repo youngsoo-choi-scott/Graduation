@@ -52,6 +52,7 @@ body a {
   .main-container {
     grid-template-columns: 100%;
     grid-template-rows: max-content;
+    overflow-y: scroll;
   }
 }
 
