@@ -794,6 +794,9 @@ body a {
   .profile-symbol img {
     width: 100%;
   }
+  .right-top-table tbody {
+    word-break: break-all;
+  }
 }
 
 
