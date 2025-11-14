@@ -264,11 +264,12 @@ document.querySelector(".list-filter-search input").addEventListener("input", fu
 
 
 
-// JavaScript Code
-const menuToggle = document.getElementById("menu-toggle");
-const navLinks = document.querySelector(".nav-links");
-
-menuToggle.addEventListener("click", () => {
-  navLinks.classList.toggle("active");
-  console.log(navLinks.classList); // 디버깅: 클래스 토글 확인
-});
+/* JavaScript 함수: 메뉴 열기/닫기 */
+    function toggleMenu() {
+      const overlay = document.getElementById('menuOverlay');
+      if (overlay.style.display === "flex") {
+        overlay.style.display = "none";
+      } else {
+        overlay.style.display = "flex";
+      }
+    }
