@@ -690,15 +690,16 @@ body a {
   top: 0;
   left: 0;
   width: 100%;
-  border-bottom: 1px solid #f25100;
-  color: #f25100;
+  /* border-bottom: 1px solid #f25100; */
+  background-color: #f25100;
+  color: #ffffff;
   z-index: 1000;
   font-family: Pretendard, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
-  font-size: 32px;
+  font-size: 18px;
   line-height: 1.5;
   letter-spacing: -0.025em;
   font-weight: 600;
-  padding: 20px;
+  padding: 10px 20px;
   cursor: pointer;
   align-items: center;
 }
