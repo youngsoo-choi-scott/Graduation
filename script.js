@@ -1,3 +1,4 @@
+// 메인페이지
 document.addEventListener("DOMContentLoaded", function () {
   const grid = document.querySelector(".right .grid");
   const gap = 8;
@@ -101,92 +102,92 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-
-// border-right 스타일을 동적으로 설정하는 최적화된 함수
+// 디자이너 페이지지
+// border-right 스타일을 동적으로 설정하는 최적화된 함수 (최신화된 테두리 설정)
 function updateBorders() {
+  // 보이는 `.designer-list ul li` 요소만 선택
   const items = Array.from(document.querySelectorAll('.designer-list ul li')).filter(
     (item) => !item.classList.contains('hidden') && item.style.display !== 'none'
   );
 
-  // 모바일 여부에 따른 칸 수 (columns)
-  const isMobile = window.innerWidth <= 600; // 모바일 크기 확인
-  const columns = isMobile ? 2 : 4; // 모바일(2칸), 데스크탑(4칸)
+  // 화면 너비에 따른 열(column) 계산
+  const isMobile = window.innerWidth <= 600; // 600px 이하 여부
+  const columns = isMobile ? 2 : 4; // 모바일: 2칸, 데스크톱: 4칸
 
+  // 테두리 초기화 및 동적으로 업데이트
   items.forEach((item, index) => {
-    item.style.borderRight = (index + 1) % columns === 0 ? 'none' : '1px solid #f25100';
+    // 기본 테두리 설정
+    item.style.borderRight = '1px solid #f25100';
+    // 특정 조건에 따라 테두리 제거
+    if ((index + 1) % columns === 0) {
+      item.style.borderRight = 'none';
+    }
   });
 }
 
-// 필터, 정렬, 검색 이벤트 트리거 후에 호출하도록 연결
-window.addEventListener('resize', updateBorders);
-document.getElementById('category').addEventListener('change', updateBorders);
-document.querySelector('.list-filter-search button').addEventListener('click', updateBorders);
-updateBorders(); // 초기 실행
-
-
-
-
-// 페이지 로드 시 업데이트 실행
-updateBorders();
-
-// 브라우저 크기 조정 시 반응형으로 업데이트
-window.addEventListener('resize', updateBorders);
-
 // 필터 이벤트 리스너 (카테고리별 필터링)
-document.getElementById("category").addEventListener("change", function () {
-  const selectedCategory = this.value;
-  const items = document.querySelectorAll(".designer-list ul li");
+document.getElementById('category').addEventListener('change', function () {
+  const selectedCategory = this.value; // 선택된 카테고리 값
+  const items = document.querySelectorAll('.designer-list ul li');
 
   items.forEach((item) => {
-    if (selectedCategory === "all" || item.classList.contains(selectedCategory)) {
-      item.classList.remove("hidden"); // 해당 카테고리는 보임
+    if (selectedCategory === 'all' || item.classList.contains(selectedCategory)) {
+      item.classList.remove('hidden'); // 해당 카테고리는 표시
     } else {
-      item.classList.add("hidden"); // 해당 카테고리는 숨김
+      item.classList.add('hidden'); // 해당 카테고리는 숨김
     }
   });
 
-  updateBorders(); // 필터링 후 테두리 업데이트
+  // 필터링 이후 테두리 업데이트
+  updateBorders();
 });
 
-// 정렬 이벤트 리스너
-document.querySelector('select[style="padding-left: 10px;"]').addEventListener("change", function () {
-  const sortOrder = this.value; // 1은 오름차순, 2는 내림차순
-  const ul = document.querySelector(".designer-list ul");
+// 정렬 이벤트 리스너 (오름차순 또는 내림차순 정렬)
+document.querySelector('select[style="padding-left: 10px;"]').addEventListener('change', function () {
+  const sortOrder = this.value; // 정렬 기준: 1(오름차순), 2(내림차순)
+  const ul = document.querySelector('.designer-list ul');
   const items = Array.from(ul.children);
 
-  // 이름 순서로 정렬
+  // 이름 기준으로 정렬 (한글 이름)
   items.sort(function (a, b) {
-    const nameA = a.querySelector("span").innerText.toLowerCase();
-    const nameB = b.querySelector("span").innerText.toLowerCase();
-    return sortOrder === "1" ? nameA.localeCompare(nameB) : nameB.localeCompare(nameA);
+    const nameA = a.querySelector('span').innerText.toLowerCase();
+    const nameB = b.querySelector('span').innerText.toLowerCase();
+    return sortOrder === '1' ? nameA.localeCompare(nameB) : nameB.localeCompare(nameA);
   });
 
-  // 정렬된 순서를 DOM에 다시 추가
+  // 정렬된 항목들을 DOM에 추가
   items.forEach((item) => ul.appendChild(item));
 
-  updateBorders(); // 정렬 후 테두리 업데이트
+  // 정렬 후 테두리 업데이트
+  updateBorders();
 });
 
-// 실시간 검색 기능
-document.querySelector(".list-filter-search input").addEventListener("input", function () {
-  const searchInput = this.value.toLowerCase(); // 검색창에 입력된 텍스트
-  const items = document.querySelectorAll(".designer-list ul li");
+// 실시간 검색 기능 (입력한 텍스트 기준으로 필터링)
+document.querySelector('.list-filter-search input').addEventListener('input', function () {
+  const searchInput = this.value.toLowerCase(); // 검색 텍스트를 소문자로 변환
+  const items = document.querySelectorAll('.designer-list ul li');
 
   items.forEach((item) => {
-    const name = item.querySelector("p span:first-child").innerText.toLowerCase(); // 한글 이름
-    const englishName = item.querySelector("p span:last-child").innerText.toLowerCase(); // 영문 이름
+    const name = item.querySelector('p span:first-child').innerText.toLowerCase(); // 한글 이름
+    const englishName = item.querySelector('p span:last-child').innerText.toLowerCase(); // 영문 이름
 
-    // 검색 키워드와 일치하는 항목만 표시
+    // 검색 텍스트와 일치 여부에 따라 표시/숨김 처리
     if (name.includes(searchInput) || englishName.includes(searchInput)) {
-      item.style.display = "block"; // 관련 결과 보여줌
+      item.style.display = 'block'; // 일치하면 표시
     } else {
-      item.style.display = "none"; // 관련 없는 항목 숨김
+      item.style.display = 'none'; // 불일치하면 숨김
     }
   });
 
-  updateBorders(); // 검색 후 테두리 업데이트
+  // 검색 후 테두리 업데이트
+  updateBorders();
 });
 
+// 창 크기 조정 시 반응형 처리
+window.addEventListener('resize', updateBorders);
+
+// 초기 실행 (페이지 로드 시 테두리 처음 설정)
+updateBorders();
 
 
 
@@ -194,6 +195,7 @@ document.querySelector(".list-filter-search input").addEventListener("input", fu
 
 
 
+// 프로젝트 페이지지
 // border-right를 동적으로 설정하는 함수
 function updateBorders() {
   const items = Array.from(document.querySelectorAll('.projet-list ul li')).filter(
@@ -274,7 +276,7 @@ document.querySelector(".list-filter-search input").addEventListener("input", fu
 
 
 
-
+// 모바일 헤더
 /* JavaScript 함수: 메뉴 열기/닫기 */
     function toggleMenu() {
       const overlay = document.getElementById('menuOverlay');
