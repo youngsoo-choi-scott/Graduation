@@ -505,13 +505,8 @@ body a {
   width: 25%;
   height: auto;
   box-sizing: border-box;
-  /* border-right: 1px solid #f25100; */
   border-bottom: 1px solid #f25100;
 }
-
-/* .designer-list ul li:nth-child(4n) {
-  border-right: 0;
-} */
 
 .designer-list ul li a {
   display: block;
@@ -791,9 +786,6 @@ body a {
   .designer-list ul li {
     width: 50%;
   }
-  /* .designer-list ul li:nth-child(2n) {
-    border-right: 0;
-  } */
   .profile-symbol img {
     width: 100%;
   }
