@@ -104,7 +104,7 @@ document.addEventListener("DOMContentLoaded", function () {
 // 디자이너 페이지
 // border-right 스타일을 동적으로 설정 (최적화된 함수)
 function updateBorders() {
-  // 보이는 `.designer-list ul li` 요소만 선택 필터링
+  // 보이는 `.designer-list ul li` 요소만 선택
   const items = Array.from(document.querySelectorAll('.designer-list ul li')).filter(
     (item) => !item.classList.contains('hidden') && item.style.display !== 'none'
   );
@@ -113,15 +113,15 @@ function updateBorders() {
   const isMobile = window.innerWidth <= 600; // 600px 이하 여부
   const columns = isMobile ? 2 : 4; // 모바일: 2칸, 데스크톱: 4칸
 
-  // 초기화: 모든 아이템의 테두리 재설정
+  // 1. 모든 테두리 초기화
   items.forEach((item) => {
-    item.style.borderRight = '1px solid #f25100'; // 기본 스타일 설정
+    item.style.borderRight = '1px solid #f25100'; // 기본적으로 설정
   });
 
-  // 열 기준으로 4의 배수(데스크탑) 또는 2의 배수(모바일) 계산
+  // 2. 열 기준으로 배수 계산하여 테두리 제거
   items.forEach((item, index) => {
     if ((index + 1) % columns === 0) {
-      item.style.borderRight = 'none'; // 4의 배수 또는 2의 배수 제거
+      item.style.borderRight = 'none'; // 열 끝의 테두리 제거
     }
   });
 }
@@ -134,14 +134,14 @@ document.getElementById('category').addEventListener('change', function () {
   items.forEach((item) => {
     if (selectedCategory === 'all' || item.classList.contains(selectedCategory)) {
       item.classList.remove('hidden');
-      item.style.display = 'block'; // 필터링된 항목 표시
+      item.style.display = 'block'; // 표시 상태로 변경
     } else {
       item.classList.add('hidden');
-      item.style.display = 'none'; // 필터링된 항목 숨김
+      item.style.display = 'none'; // 숨김 처리
     }
   });
 
-  updateBorders(); // 필터 후 테두리 업데이트
+  updateBorders(); // 필터링 후 재계산
 });
 
 // 정렬 이벤트 리스너 (오름차순 또는 내림차순 정렬)
@@ -157,15 +157,15 @@ document.querySelector('select[style="padding-left: 10px;"]').addEventListener('
     return sortOrder === '1' ? nameA.localeCompare(nameB) : nameB.localeCompare(nameA);
   });
 
-  // 재배열된 요소를 DOM에 다시 추가
+  // 재배열된 항목 DOM에 다시 추가
   items.forEach((item) => ul.appendChild(item));
 
-  updateBorders(); // 정렬 후 테두리 업데이트
+  updateBorders(); // 정렬 후 재계산
 });
 
-// 실시간 검색 기능 (텍스트 필터링)
+// 실시간 검색 기능
 document.querySelector('.list-filter-search input').addEventListener('input', function () {
-  const searchInput = this.value.toLowerCase(); // 검색 입력값
+  const searchInput = this.value.toLowerCase(); // 검색 입력 텍스트
   const items = document.querySelectorAll('.designer-list ul li');
 
   items.forEach((item) => {
@@ -181,13 +181,13 @@ document.querySelector('.list-filter-search input').addEventListener('input', fu
     }
   });
 
-  updateBorders(); // 검색 후 테두리 업데이트
+  updateBorders(); // 검색 후 재계산
 });
 
 // 창 크기 조정 시 처리
 window.addEventListener('resize', updateBorders);
 
-// 페이지 로드 시 초기 실행
+// 페이지 로드 시 실행
 updateBorders();
 
 
