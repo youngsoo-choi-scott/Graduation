@@ -102,47 +102,46 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 // 디자이너 페이지
-// border-right 스타일을 동적으로 설정 (최적화된 함수)
 function updateBorders() {
-  // 보이는 `.designer-list ul li` 요소만 선택
+  // 보이는 li 요소들만 필터링
   const items = Array.from(document.querySelectorAll('.designer-list ul li')).filter(
-    (item) => !item.classList.contains('hidden') && item.style.display !== 'none'
+    (item) => !item.classList.contains('hidden') && window.getComputedStyle(item).display !== 'none'
   );
 
-  // 화면 너비에 따른 열(column) 계산
-  const isMobile = window.innerWidth <= 600; // 600px 이하 여부
-  const columns = isMobile ? 2 : 4; // 모바일: 2칸, 데스크톱: 4칸
+  const isMobile = window.innerWidth <= 600;
+  const columns = isMobile ? 2 : 4;
 
-  // 1. 모든 테두리 초기화
-  items.forEach((item) => {
-  item.style.setProperty('border-right', '1px solid #f25100', 'important');
-});
+  // 기존에 붙은 no-border-right 클래스 모두 제거
+  document.querySelectorAll('.designer-list ul li.no-border-right').forEach((item) => {
+    item.classList.remove('no-border-right');
+  });
 
-  // 2. 열 기준으로 배수 계산하여 테두리 제거
+  // 보이는 아이템들 중 4의 배수 위치에 no-border-right 클래스 추가
   items.forEach((item, index) => {
-  if ((index + 1) % columns === 0) {
-    item.style.setProperty('border-right', 'none', 'important');
-  }
-});
+    if ((index + 1) % columns === 0) {
+      item.classList.add('no-border-right');
+    }
+  });
 }
 
-// 필터 이벤트 리스너 (카테고리별 필터링)
+// 카테고리 필터 이벤트 리스너
 document.getElementById('category').addEventListener('change', function () {
-  const selectedCategory = this.value; // 선택된 카테고리 값
+  const selectedCategory = this.value;
   const items = document.querySelectorAll('.designer-list ul li');
 
   items.forEach((item) => {
     if (selectedCategory === 'all' || item.classList.contains(selectedCategory)) {
       item.classList.remove('hidden');
-      item.style.display = 'block'; // 표시 상태로 변경
+      // style.display 조작 대신 클래스로만 숨김 처리 권장
     } else {
       item.classList.add('hidden');
-      item.style.display = 'none'; // 숨김 처리
     }
   });
 
-  updateBorders(); // 필터링 후 재계산
+  updateBorders(); // 필터링 후 클래스 업데이트
 });
+
+
 
 // 정렬 이벤트 리스너 (오름차순 또는 내림차순 정렬)
 document.querySelector('select[style="padding-left: 10px;"]').addEventListener('change', function () {
