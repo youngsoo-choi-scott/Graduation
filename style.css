@@ -702,6 +702,7 @@ body a {
   padding: 10px 20px;
   cursor: pointer;
   align-items: center;
+  box-sizing: border-box;
 }
 
 .overlay {
