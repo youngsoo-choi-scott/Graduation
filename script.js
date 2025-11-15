@@ -115,15 +115,15 @@ function updateBorders() {
 
   // 1. 모든 테두리 초기화
   items.forEach((item) => {
-    item.style.borderRight = '1px solid #f25100'; // 기본적으로 설정
-  });
+  item.style.setProperty('border-right', '1px solid #f25100', 'important');
+});
 
   // 2. 열 기준으로 배수 계산하여 테두리 제거
   items.forEach((item, index) => {
-    if ((index + 1) % columns === 0) {
-      item.style.borderRight = 'none'; // 열 끝의 테두리 제거
-    }
-  });
+  if ((index + 1) % columns === 0) {
+    item.style.setProperty('border-right', 'none', 'important');
+  }
+});
 }
 
 // 필터 이벤트 리스너 (카테고리별 필터링)
