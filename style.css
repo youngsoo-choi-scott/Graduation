@@ -710,7 +710,7 @@ body a {
   content: "+";
   position: absolute;
   right: 20px; 
-  top: 50%;
+  top: 45%;
   transform: translateY(-50%);
   font-size: 2em; 
   font-weight: 300;
