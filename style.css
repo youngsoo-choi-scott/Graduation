@@ -703,6 +703,20 @@ body a {
   cursor: pointer;
   align-items: center;
   box-sizing: border-box;
+  justify-content: space-between;
+}
+
+.navbar::after {
+  content: "+";
+  position: absolute;
+  right: 20px; 
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 24px; 
+  font-weight: 600;
+  color: #f25100; 
+  cursor: pointer; 
+  user-select: none; 
 }
 
 .overlay {
