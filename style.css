@@ -690,9 +690,9 @@ body a {
   top: 0;
   left: 0;
   width: 100%;
-  /* border-bottom: 1px solid #f25100; */
-  background-color: #f25100;
-  color: #ffffff;
+  border-bottom: 1px solid #f25100;
+  background-color: #ffffff;
+  color: #f25100;
   z-index: 1000;
   font-family: Pretendard, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
   font-size: 18px;
